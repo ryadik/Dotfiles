@@ -1,333 +1,285 @@
-" Vim-Plug plugin configuration
-" https://github.com/junegunn/vim-plug#usage
-call plug#begin('~/.local/share/nvim/plugged')
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
 
-" File browser
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'ryanoasis/vim-webdevicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" Fast file searching
-Plug 'ctrlpvim/ctrlp.vim'
-
-" Colors
-Plug 'altercation/vim-colors-solarized'
-
-" Powerline clone
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Languages
-Plug 'othree/yajs.vim'
-Plug 'tpope/vim-endwise'
-
-" Templates
-Plug 'slim-template/vim-slim'
-" jsx
-Plug 'mxw/vim-jsx'
-" json
-Plug 'leshill/vim-json'
-" typescript
-Plug 'leafgarland/typescript-vim'
-" Ctags
-Plug 'ludovicchabant/vim-gutentags'
-" import statements for javascript with universal ctags
-Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
-
-" Emmet Zen coding
-Plug 'mattn/emmet-vim'
-" closetag.vim
-Plug 'alvan/vim-closetag'
-
-" Ruby/Rails
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-
-" testing
-Plug 'janko-m/vim-test'
-Plug 'tpope/vim-cucumber'
-
-" code linter
-Plug 'scrooloose/syntastic'
-
-" prettier
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" prettier
-nmap <Leader>mp <Plug>(Prettier)
-
-" modern javascript https://javascriptplayground.com/blog/2017/01/vim-for-javascript/
-Plug 'pangloss/vim-javascript'
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
-
-" Typescript Support
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-
-" Autocomplete async
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
-function! StrTrim(txt)
-  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-endfunction
-
-let g:flow_path = StrTrim(system('PATH=$(yarn bin):$PATH && which flow'))
-
-if g:flow_path != 'flow not found'
-  let g:deoplete#sources#flow#flow_bin = g:flow_path
-endif
-
-" Snippets
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-
-" git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-
-" Formatting
-Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdcommenter'
-Plug 'matze/vim-move'
 
-Plug 'ervandew/supertab' " Supertab completion
-Plug 'mustache/vim-mustache-handlebars' " mustache and handlebars templates
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
-" List ends here. Plugins become visible to Vim after this call.
+Plug 'airblade/vim-gitgutter'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+Plug 'akinsho/bufferline.nvim'
+Plug 'Yggdroot/indentLine' 
+Plug 'nvim-lualine/lualine.nvim'
+
+Plug 'morhetz/gruvbox'
+Plug 'doums/darcula'
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+
+" Initialize plugin system
 call plug#end()
 
-" vim-mustache-handlebars
-let g:mustache_abbreviations = 1
-let g:mustache_operators = 1
-
-" Solarized
-syntax enable
-set background=dark
-colorscheme solarized
-
-" show line numbers
+set mouse=a
 set number
-
-" autoread files that have changed
-set autoread
-
-" remap <leader> to <space>
-let mapleader = "\<Space>"
-
-" folding http://vim.wikia.com/wiki/Folding
-" setlocal foldmethod=syntax
-
-" indent & tab stuff
-filetype plugin indent on
+set hidden
+set cursorline
+set expandtab
+set autoindent
+set smartindent
 set shiftwidth=2
 set tabstop=2
-set expandtab
-set list
+set encoding=utf8
+set history=5000
+set clipboard=unnamedplus
+set cindent
+set noswapfile
+set splitbelow
+set splitright
+set termguicolors
+" Better display for messages 
+set cmdheight=2 
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+" always show signcolumns
+set signcolumn=yes
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set laststatus=2
 
-" Spacing
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype slim setlocal ts=2 sts=2 sw=2
-autocmd Filetype yml setlocal ts=4 sts=4 sw=4
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme= 'solarized'
-let g:airline#extensions#tabline#enabled = 1
+"colorscheme darcula
+colorscheme gruvbox
 
-" NERDtree
-nmap <leader>n :NERDTreeToggle<CR>
-let g:NERDTreeChDirMode=2
-let g:NERDTreeShowHidden=1
 
-" CtrlP
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn)$|vendor\/bundle|bower_components|node_modules|tmp|_build',
-      \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.beam$\|\.class$\|\.o$\|\~$\',
-      \ }
+" MAPPINGS
 
-" Use the nearest .git directory as the cwd
-" This makes a lot of sense if you are working on a project that is in version
-" control. It also supports works with .svn, .hg, .bzr.
-let g:ctrlp_working_path_mode = 'r'
+" j/k will move virtual lines (lines that wrap)
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <C-s> :w<CR>
+nnoremap <C-Q> :wq<CR>
+nnoremap ,<space> :nohlsearch<CR>
 
-" Use a leader instead of the actual named binding
-nmap <leader>p :CtrlP<cr>
+" shift+arrow selection
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+imap <S-Up> <Esc>v<Up>
+imap <S-Down> <Esc>v<Down>
+imap <S-Left> <Esc>v<Left>
+imap <S-Right> <Esc>v<Right>
 
-"
+" cut, copy, paste, undo
+vmap <C-c> y<Esc>i
+vmap <C-x> d<Esc>i
+map <C-v> pi
+imap <C-v> <Esc>pi
+imap <C-z> <Esc>ui
 
-" show colorcolumn 80
-set colorcolumn=80
-highlight ColorColumn ctermbg=0
+" навигация в буфферах (табах)
+nnoremap <M-Right> :bn<cr>
+nnoremap <M-Left> :bp<cr>
+nnoremap <c-x> :bp \|bd #<cr>
 
-set guifont=Hack\ Regular\ Nerd\ Font\ Complete
-set encoding=utf-8
-set nowrap " no wrapping of lines
-set mouse=a " enable mouse scrolling
+inoremap jk <ESC>
+nmap <C-n> :NERDTreeToggle<CR>
 
-" nerdcommenter
-let NERDSpaceDelims=1
+" ctrl+/ для комментария
+vmap <C-_> <plug>NERDCommenterToggle
+nmap <C-_> <plug>NERDCommenterToggle
 
-" vim-move
-let g:move_key_modifier = 'C'
+" telescope
+" files
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fbr <cmd>Telescope find_browser<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" buffers
+nnoremap <leader>fbu <cmd>Telescope buffers<cr>
+nnoremap <leader>bff <cmd>Telescope current_buffer_fuzzy_find<cr>
+" colorschemes
+nnoremap <leader>th <cmd>Telescope colorscheme<cr>
+" git
+nnoremap <leader>gc <cmd>Telescope git_commits<cr>
+nnoremap <leader>gb <cmd>Telescope git_branches<cr>
+nnoremap <leader>gs <cmd>Telescope git_status<cr>
 
-nmap <leader>sn :e ~/.local/share/nvim/snippets/ruby.snippets<CR>
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+" [shift+]tab для навигации по автокомплиту или стрелки 
+" используйте ':verbose imap <tab>' чтобы убетиться что tab не замапан на
+" другое действие
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" vim-test
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-nmap <leader>ss :Rview<cr>
-
-function! SplitStrategy(cmd)
-  botright new | call termopen(a:cmd) | startinsert
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-let g:test#custom_strategies = {'terminal_split': function('SplitStrategy')}
-let g:test#strategy = 'terminal_split'
 
-" Buffer
-" This allows buffers to be hidden if you've modified a buffer.
-" This is almost a must if you wish to use buffers in this way.
-set hidden
+" Use <c-space> to trigger completion.
+" ctrl+space для срабатываня автокомплита
+inoremap <silent><expr> <c-space> coc#refresh()
 
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
-" nmap <leader>bt :enew<cr>
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_nfo()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Move to the next buffer
-" nmap <leader>l :bnext<CR>
+" END MAPPINGS
 
-" Move to the previous buffer
-" nmap <leader>h :bprevious<CR>
 
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-" nmap <leader>q :bp <BAR> bd #<CR>
+" prettier command for coc
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" show invisible
-set list
-set listchars=tab:→\ ,trail:∙,nbsp:•
 
-" the way of vim
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+" NERDTree
 
-" Tab Shortcuts
-nnoremap tk :tabfirst<CR>
-nnoremap tl :tabnext<CR>
-nnoremap th :tabprev<CR>
-nnoremap tj :tablast<CR>
-nnoremap tn :tabnew<CR>
-nnoremap tc :CtrlSpaceTabLabel<CR>
-nnoremap td :tabclose<CR>
+" open NERDTree auto by enter nvim
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree
 
-" Prettier save
-nmap <Leader>mp <Plug>(Prettier)
+let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore = ['^node_modules$']
+" sync open file with NERDTree
+" " Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
 
-" syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_enable_ballons=has('ballon_eval')
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_jump=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=3
+" Call NERDTreeFind if NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
 
-let g:syntastic_javascript_checkers = ['eslint'] " ['jshint', 'eslint']
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
 
-" Emmet Zen Coding
-"   Just html, css
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css EmmetInstall
-" let g:user_emmet_leader_key='<C-G>.'
+" END NERDTree
 
-" Mapping for Tabularize (http://vimcasts.org/episodes/aligning-text-with-tabular-vim)
-if exists(":Tabularize")
-  nmap <Leader>tab<bar> :Tabularize /<bar><CR>
-  vmap <Leader>tab<bar> :Tabularize /<bar><CR>
-  nmap <Leader>tab= :Tabularize /=<CR>
-  vmap <Leader>tab= :Tabularize /=<CR>
-  nmap <Leader>tab: :Tabularize /:\zs<CR>
-  vmap <Leader>tab: :Tabularize /:\zs<CR>
-endif
 
-" Automatically removing all trailing whitespace
-fun! <SID>StripTrailingWhitespaces()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  %s/\t/  /ge
-  call cursor(l, c)
-endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" lualine
+lua << END
+require'lualine'.setup()
+END
 
-" closetag.vim
-" set filetype for hamlc and es6
-au! BufRead,BufNewFile *.hamlc setfiletype haml
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
-" filenames like *.xml, *.html, *.xhtml, ...
-" These are the file extensions where this plugin is enabled.
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+" bufferline
+lua << END
+require("bufferline").setup{
+  diagnostics = "coc"
+}
+END
 
-" filenames like *.xml, *.xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
 
-" filetypes like xml, html, xhtml, ...
-" These are the file types where this plugin is enabled.
-let g:closetag_filetypes = 'html,xhtml,phtml'
+" COC
+" coc config
+let g:coc_global_extensions = [
+  "\ 'coc-snippets',
+  \ 'coc-css',
+  \ 'coc-html',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-json', 
+  \ 'coc-vetur',
+  \ ]
 
-" filetypes like xml, xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
 
-" integer value [0|1]
-" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
-let g:closetag_emptyTags_caseSensitive = 1
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" dict
-" Disables auto-close if not in a "valid" region (based on filetype)
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
-" Shortcut for closing tags, default is '>'
-let g:closetag_shortcut = '>'
-" Add > at current position without closing the current tag, default is ''
-let g:closetag_close_shortcut = '<leader>>'
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" vim-js-file-import
-nnoremap <Leader>mf <Plug>(JsFileImport)
-nnoremap <Leader>mF <Plug>(JsFileImportList)
-nnoremap <Leader>mg <Plug>(JsGotoDefinition)
-nnoremap <Leader>mG <Plug>(JsGotoDefinition)
-nnoremap <Leader>mp <Plug>(PromptJsFileImport)
-nnoremap <Leader>ms <Plug>(SortJsFileImport)
-nnoremap <Leader>mc <Plug>(JsFixImport)
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+" Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <C-d> <Plug>(coc-range-select)
+xmap <silent> <C-d> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+let g:ale_completion_enabled = 0
+let g:ale_linters = {'javascript': ['eslint']}

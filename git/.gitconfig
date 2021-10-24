@@ -1,6 +1,6 @@
 [user]
-  name = Eric Bartholemy
-  email = eric@kabisa.nl
+	name = K1nGsmaN-hub
+	email = 15162342h@gmail.com
 [includeIf "gitdir:~/personal/"]
   path = ~/personal/.gitconfig
 [core]
