@@ -21,6 +21,8 @@ brew "tree"
 brew "wget"
 brew "yarn"
 brew "zsh"
+brew "antigen"
+brew "asdf"
 brew "ripgrep"
 brew "fd"
 
