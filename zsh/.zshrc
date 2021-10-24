@@ -1,8 +1,10 @@
 # Antigen
-source $HOME/bin/antigen.zsh
+#source $HOME/bin/antigen.zsh
+source /usr/local/share/antigen/antigen.zsh
 
 # asdf programming version manager
-source $HOME/.asdf/asdf.sh
+#source $HOME/.asdf/asdf.sh
+source /usr/local/opt/asdf/libexec/asdf.sh
 
 # scmpuff
 eval "$(scmpuff init -s)"
