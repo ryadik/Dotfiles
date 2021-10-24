@@ -101,8 +101,8 @@ imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
 
 " навигация в буфферах (табах)
-nnoremap <M-Right> :bn<cr>
-nnoremap <M-Left> :bp<cr>
+nnoremap <TAB> :bn<cr>
+nnoremap <S-TAB> :bp<cr>
 nnoremap <c-x> :bp \|bd #<cr>
 
 inoremap jk <ESC>
