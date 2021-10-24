@@ -67,7 +67,7 @@ set laststatus=2
 
 
 "colorscheme darcula
-colorscheme gruvbox
+colorscheme dracula 
 
 
 " MAPPINGS
@@ -118,6 +118,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fbr <cmd>Telescope find_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>hk <cmd>Telescope keymaps<cr>
 " buffers
 nnoremap <leader>fbu <cmd>Telescope buffers<cr>
 nnoremap <leader>bff <cmd>Telescope current_buffer_fuzzy_find<cr>
@@ -203,6 +204,10 @@ require("bufferline").setup{
   diagnostics = "coc"
 }
 END
+
+
+" indentLine
+let g:indentLine_fileTypeExclude=['json', 'md', 'markdown']
 
 
 " COC
