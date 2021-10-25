@@ -26,4 +26,11 @@
 
 # Symlink dotfiles
 
-    $ stow git neovim tmux personal-git ruby ssh zsh
+    $ stow git alacritty neovim tmux personal-git ruby ssh zsh
+
+If you got this error:
+    
+    WARNING! unstowing bash would cause conflicts:
+    * existing target is neither a link nor a directory: [some dir]
+
+Delete your current config files and try again
