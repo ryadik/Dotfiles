@@ -28,7 +28,7 @@ brew "fd"
 
 # Casks
 cask "google-chrome"
-cask "iterm2"
+cask "alacritty"
 cask "spotify"
 cask "macs-fan-control"
 cask "sublime-text"
