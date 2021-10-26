@@ -32,6 +32,7 @@ Plug 'morhetz/gruvbox'
 Plug 'doums/darcula'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
+Plug 'preservim/vim-wheel'
 
 " Initialize plugin system
 call plug#end()
@@ -148,7 +149,6 @@ endfunction
 " Use <c-space> to trigger completion.
 " ctrl+space для срабатываня автокомплита
 inoremap <silent><expr> <c-space> coc#refresh()
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -208,6 +208,14 @@ END
 
 " indentLine
 let g:indentLine_fileTypeExclude=['json', 'md', 'markdown']
+
+
+" vim-wheel
+let g:wheel#map#up = '<c-k>'
+let g:wheel#map#down = '<c-j>'
+let g:wheel#map#mouse = 1
+let g:wheel#line#threshold = 5
+
 
 
 " COC
