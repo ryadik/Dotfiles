@@ -8,8 +8,8 @@ env:
 window:
   # Spread additional padding evenly around the terminal content.
   padding:
-    x: 10
-    y: 10
+    x: 0 
+    y: 0 
 
   dimensions:
     columns: 135
