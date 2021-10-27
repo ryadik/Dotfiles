@@ -4,11 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'scrooloose/nerdcommenter'
-
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
@@ -16,7 +11,6 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'dense-analysis/ale'
@@ -54,10 +48,11 @@ set noswapfile
 set splitbelow
 set splitright
 set termguicolors
+set cc=80
 " Better display for messages 
 set cmdheight=2 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+set updatetime=100
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 " always show signcolumns
@@ -65,6 +60,9 @@ set signcolumn=yes
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set laststatus=2
+set nosc noru nosm
+set lazyredraw
+set ignorecase
 
 
 "colorscheme darcula
@@ -73,11 +71,13 @@ colorscheme dracula
 
 " MAPPINGS
 
+" remap leader key
+let mapleader=" "
+:verbose inoremap <Tab>
+
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-nnoremap <C-s> :w<CR>
-nnoremap <C-Q> :wq<CR>
 nnoremap ,<space> :nohlsearch<CR>
 
 " shift+arrow selection
@@ -104,19 +104,14 @@ imap <C-z> <Esc>ui
 " навигация в буфферах (табах)
 nnoremap <TAB> :bn<cr>
 nnoremap <S-TAB> :bp<cr>
-nnoremap <c-x> :bp \|bd #<cr>
+nnoremap <c-w> :bp \|bd #<cr>
 
 inoremap jk <ESC>
-nmap <C-n> :NERDTreeToggle<CR>
-
-" ctrl+/ для комментария
-vmap <C-_> <plug>NERDCommenterToggle
-nmap <C-_> <plug>NERDCommenterToggle
 
 " telescope
 " files
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fbr <cmd>Telescope find_browser<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>fbr <cmd>Telescope file_browser hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>hk <cmd>Telescope keymaps<cr>
@@ -130,66 +125,15 @@ nnoremap <leader>gc <cmd>Telescope git_commits<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches<cr>
 nnoremap <leader>gs <cmd>Telescope git_status<cr>
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-" [shift+]tab для навигации по автокомплиту или стрелки 
-" используйте ':verbose imap <tab>' чтобы убетиться что tab не замапан на
-" другое действие
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 " Use <c-space> to trigger completion.
 " ctrl+space для срабатываня автокомплита
 inoremap <silent><expr> <c-space> coc#refresh()
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_nfo()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " END MAPPINGS
 
 
 " prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-
-" NERDTree
-
-" open NERDTree auto by enter nvim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree
-
-let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeShowHidden=1
-let g:NERDTreeIgnore = ['^node_modules$']
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind if NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
-
-" END NERDTree
 
 
 " lualine
@@ -221,18 +165,19 @@ let g:wheel#line#threshold = 5
 " COC
 " coc config
 let g:coc_global_extensions = [
-  "\ 'coc-snippets',
   \ 'coc-css',
   \ 'coc-html',
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-pairs',
   \ 'coc-tsserver',
-  \ 'coc-json', 
+  \ 'coc-json',
   \ 'coc-vetur',
   \ ]
 
 " Remap keys for gotos
+autocmd FileType scss setl iskeyword+=@-@
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
