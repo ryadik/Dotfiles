@@ -71,10 +71,16 @@ alias vim="nvim"
 alias nvbi="nvim +PlugInstall +qa"
 alias nvbu="nvim +PlugUpdate +qa"
 
+# tmux
+alias tls="tmux ls"
+alias tos="tmux attach -t"
+alias tns="tmux new -s"
+
 # Git aliases
 alias g="git"
 alias gst="git status -sb"
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias gpom="git push origin master"
 alias gpo="git push origin"
 alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(green)%ar%C(reset) %C(bold blue)%an%C(reset) %C(red)%d%C(reset) %s" --graph --abbrev-commit --decorate'
