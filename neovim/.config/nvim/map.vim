@@ -60,7 +60,7 @@ nnoremap <leader>gs <cmd>Telescope git_status<cr>
 
 " Use <c-space> to trigger completion.
 " ctrl+space для срабатываня автокомплита
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-space>coc#refresh()
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
