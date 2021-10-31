@@ -66,6 +66,7 @@ bindkey '^Z' fancy-ctrl-z
 
 # Map vim to nvim
 alias vim="nvim"
+alias v="nvim"
 
 # Update neovim bundles
 alias nvbi="nvim +PlugInstall +qa"
@@ -102,6 +103,8 @@ alias gt="git archive -o snapshot.tar.gz HEAD"
 alias gpr="git --no-pager lg HEAD --not $1"
 alias grp="git remote prune origin"
 alias grhh="git reset HEAD --hard"
+alias gsh="git stash"
+alias gshp="git stash pop"
 
 # Bundler
 alias bi="bundle install"
@@ -110,6 +113,9 @@ alias bu="bundle update"
 
 # Overwrites
 alias ll='ls -ahl'
+
+# lazygit
+alias lg="lazygit"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
