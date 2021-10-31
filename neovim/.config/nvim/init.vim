@@ -33,22 +33,38 @@ set lazyredraw
 set ignorecase
 
 
-"colorscheme darcula
+" colorscheme darcula
 colorscheme dracula 
+" colorscheme onedark
+" colorscheme gruvbox
 
 
 " Mappings ------------------------------------------------------------------
 runtime ./map.vim
 
+" Plugins configs -----------------------------------------------------------
+
+" nvim-web-devicons
+runtime ./plugins/configs/nvim-web-devicons.vim
+
+" telescope
+runtime ./plugins/configs/telescope.vim
+
+" nvim-tree
+runtime ./plugins/configs/nvim-tree.vim
+
+" better-escape
+runtime ./plugins/configs/better-escape.vim
+
+" nvim-comment
+runtime ./plugins/configs/nvim-comment.vim
 
 " prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
 " lualine
-lua << END
-require'lualine'.setup()
-END
+runtime ./plugins/configs/lualine.vim
 
 
 " bufferline
