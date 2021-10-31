@@ -7,6 +7,7 @@ set mouse=a
 set number
 set hidden
 set cursorline
+set scrolloff=10
 set expandtab
 set autoindent
 set smartindent
@@ -62,34 +63,11 @@ runtime ./plugins/configs/nvim-comment.vim
 " prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-
 " lualine
 runtime ./plugins/configs/lualine.vim
 
-
 " bufferline
-lua << END
-require("bufferline").setup{
-  diagnostics = "coc"
-}
-END
-
-
-" indentLine
-let g:indentLine_fileTypeExclude=['json', 'md', 'markdown']
-
-
-" vim-wheel
-let g:wheel#map#up = '<c-k>'
-let g:wheel#map#down = '<c-j>'
-let g:wheel#map#mouse = 1
-let g:wheel#line#threshold = 5
-
-
-" ale
-let g:ale_completion_enabled = 0
-let g:ale_linters = {'javascript': ['eslint']}
-
+runtime ./plugins/configs/bufferline.vim
 
 " Coc -----------------------------------------------------------------------
 runtime ./plugins/configs/coc.vim
