@@ -32,11 +32,12 @@ set laststatus=2
 set nosc noru nosm
 set lazyredraw
 set ignorecase
+set completeopt=menuone,noselect
 
 
 " colorscheme darcula
-colorscheme dracula 
-" colorscheme onedark
+" colorscheme dracula 
+colorscheme onedark
 " colorscheme gruvbox
 
 
@@ -69,5 +70,24 @@ runtime ./plugins/configs/lualine.vim
 " bufferline
 runtime ./plugins/configs/bufferline.vim
 
+" nvim-autopairs
+runtime ./plugins/configs/nvim-autopairs.vim
+
 " Coc -----------------------------------------------------------------------
-runtime ./plugins/configs/coc.vim
+" runtime ./plugins/configs/coc.vim
+
+
+" Native LSP ----------------------------------------------------------------
+runtime ./plugins/configs/lspconfig.vim
+
+" nvim-compe
+runtime ./plugins/configs/nvim-compe.vim
+
+" nvim-treesitter
+runtime ./plugins/configs/nvim-treesitter.vim
+
+" trouble.nvim
+runtime ./plugins/configs/trouble.vim
+
+" lspsaga
+" runtime ./plugins/configs/lspsaga.vim
