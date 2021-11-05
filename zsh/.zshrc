@@ -103,6 +103,7 @@ alias gt="git archive -o snapshot.tar.gz HEAD"
 alias gpr="git --no-pager lg HEAD --not $1"
 alias grp="git remote prune origin"
 alias grhh="git reset HEAD --hard"
+alias grhh-f="git checkout HEAD --"
 alias gsh="git stash"
 alias gshp="git stash pop"
 
