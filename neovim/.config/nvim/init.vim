@@ -8,11 +8,12 @@ set number
 set hidden
 set cursorline
 set scrolloff=10
-set expandtab
-set autoindent
-set smartindent
-set shiftwidth=2
+set nospell
+set nowrap
 set tabstop=2
+set shiftwidth=2
+set smartindent
+set expandtab
 set encoding=utf8
 set history=5000
 set clipboard=unnamedplus
@@ -26,13 +27,12 @@ set cmdheight=2
 set updatetime=100
 set shortmess+=c
 set signcolumn=yes
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set laststatus=2
 set nosc noru nosm
 set lazyredraw
 set ignorecase
-set completeopt=menuone,noselect
+set completeopt=menu,menuone,noselect
 
 
 " colorscheme darcula
@@ -80,8 +80,8 @@ runtime ./plugins/configs/nvim-autopairs.vim
 " Native LSP ----------------------------------------------------------------
 runtime ./plugins/configs/lspconfig.vim
 
-" nvim-compe
-runtime ./plugins/configs/nvim-compe.vim
+" nvim-cmp
+runtime ./plugins/configs/nvim-cmp.vim
 
 " nvim-treesitter
 runtime ./plugins/configs/nvim-treesitter.vim
@@ -90,4 +90,4 @@ runtime ./plugins/configs/nvim-treesitter.vim
 runtime ./plugins/configs/trouble.vim
 
 " lspsaga
-" runtime ./plugins/configs/lspsaga.vim
+runtime ./plugins/configs/lspsaga.vim
