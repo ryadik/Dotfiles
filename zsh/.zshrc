@@ -14,27 +14,13 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-### Configuration https://github.com/Powerlevel9k/powerlevel9k/
-POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-VIRTUAL_ENV_DISABLE_PROMPT=1
-POWERLEVEL9K_BATTERY_STAGES=(
-   $'▏    ▏' $'▎    ▏' $'▍    ▏' $'▌    ▏' $'▋    ▏' $'▊    ▏' $'▉    ▏' $'█    ▏'
-   $'█▏   ▏' $'█▎   ▏' $'█▍   ▏' $'█▌   ▏' $'█▋   ▏' $'█▊   ▏' $'█▉   ▏' $'██   ▏'
-   $'██   ▏' $'██▎  ▏' $'██▍  ▏' $'██▌  ▏' $'██▋  ▏' $'██▊  ▏' $'██▉  ▏' $'███  ▏'
-   $'███  ▏' $'███▎ ▏' $'███▍ ▏' $'███▌ ▏' $'███▋ ▏' $'███▊ ▏' $'███▉ ▏' $'████ ▏'
-   $'████ ▏' $'████▎▏' $'████▍▏' $'████▌▏' $'████▋▏' $'████▊▏' $'████▉▏' $'█████▏' )
-POWERLEVEL9K_IP_INTERFACE='en0'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time ip ram load battery root_indicator background_jobs)
-
 # Antigen Plugininstall
-antigen theme bhilburn/powerlevel9k powerlevel9k
 antigen use oh-my-zsh
+antigen theme robbyrussell
 
 antigen bundles <<EOBUNDLES
   bundler
+  git
   rails
   zsh-completions
   command-not-found
