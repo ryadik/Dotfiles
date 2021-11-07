@@ -80,6 +80,9 @@ runtime ./plugins/configs/nvim-autopairs.vim
 " Native LSP ----------------------------------------------------------------
 runtime ./plugins/configs/lspconfig.vim
 
+" lsp-installer
+runtime ./plugins/configs/lspinstaller.vim
+
 " nvim-cmp
 runtime ./plugins/configs/nvim-cmp.vim
 
