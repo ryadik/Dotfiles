@@ -52,6 +52,10 @@ nnoremap <leader>th <cmd>Telescope colorscheme<cr>
 nnoremap <leader>gc <cmd>Telescope git_commits<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches<cr>
 nnoremap <leader>gs <cmd>Telescope git_status<cr>
+" pickers
+nnoremap <leader>lca <cmd>lua require'telescope.builtin'.lsp_code_actions{}<cr>
+nnoremap <leader>lgr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
+nnoremap <leader>lgd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
 
 
 " LSP -----------------------------------------------------------------------
