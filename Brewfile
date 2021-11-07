@@ -25,6 +25,10 @@ brew "antigen"
 brew "asdf"
 brew "ripgrep"
 brew "fd"
+brew "gnu-tar"
+brew "gzip"
+brew "unzip"
+brew "curl"
 
 # Casks
 cask "google-chrome"
