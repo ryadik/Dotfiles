@@ -71,14 +71,24 @@ nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 
 
 " Lspaga --------------------------------------------------------------------
-" nnoremap <silent> gh :Lspsaga lsp_finder<CR>
-" nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-" nnoremap <silent>K :Lspsaga hover_doc<CR>
-" nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-" nnoremap <silent> gs :Lspsaga signature_help<CR>
-" nnoremap <silent>rn :Lspsaga rename<CR>
-" nnoremap <silent> gpd :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>lf :Lspsaga lsp_finder<CR>
+
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+nnoremap <silent><leader>ls :Lspsaga signature_help<CR>
+
+nnoremap <silent><leader>rn :Lspsaga rename<CR>
+
+nnoremap <silent><leader>gd :Lspsaga preview_definition<CR>
+
+nnoremap <silent> <leader>ld :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
 
 " Coc -----------------------------------------------------------------------
 
