@@ -11,7 +11,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'onsails/lspkind-nvim'
 
-Plug 'glepnir/lspsaga.nvim'
+" glepnir is inactive and his lspsaga is outdate
+" Plug 'glepnir/lspsaga.nvim'
+Plug 'tami5/lspsaga.nvim', {'branch': 'nvim51'} " till glepnit goes back online
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-vsnip'
