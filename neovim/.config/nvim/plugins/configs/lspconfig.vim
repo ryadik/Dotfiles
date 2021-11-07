@@ -37,6 +37,16 @@ local on_attach = function(client, bufnr)
 
 end
 
+local function lspSymbol(name, icon)
+   vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
+end
+
+lspSymbol("Error", "")
+lspSymbol("Information", "")
+lspSymbol("Hint", "")
+lspSymbol("Warning", "")
+
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'tsserver', 'vuels', 'cssls', 'eslint', 'html', 'emmet_ls' }
