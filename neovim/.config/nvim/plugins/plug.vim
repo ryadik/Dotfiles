@@ -1,8 +1,6 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
@@ -40,7 +38,6 @@ Plug 'windwp/nvim-autopairs'
 
 Plug 'airblade/vim-gitgutter'
 
-" Plug 'sheerun/vim-polyglot'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plug 'morhetz/gruvbox'

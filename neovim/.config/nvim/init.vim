@@ -27,7 +27,6 @@ set cmdheight=2
 set updatetime=100
 set shortmess+=c
 set signcolumn=yes
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set laststatus=2
 set nosc noru nosm
 set lazyredraw
@@ -72,9 +71,6 @@ runtime ./plugins/configs/bufferline.vim
 
 " nvim-autopairs
 runtime ./plugins/configs/nvim-autopairs.vim
-
-" Coc -----------------------------------------------------------------------
-" runtime ./plugins/configs/coc.vim
 
 
 " Native LSP ----------------------------------------------------------------
