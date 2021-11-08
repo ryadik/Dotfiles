@@ -1,5 +1,16 @@
 # Neovim configuration
 
+### What you should have
+
+- `Neovim =v0.5.1`
+- `NodeJS >=v14`
+- `Yarn`
+- I recomend update `npm` to latest version
+- `Python3 & pip3`
+- `Ruby & gem` you may get it in my Dotfiles/ruby
+- Unix like systems users: `curl or wget, tar (gnu-tar), unzip, gzip` - for install all servers
+- Windows system users: `tar, 7zip` - for install all servers
+
 To set up, install [vim-plug][vim-plug] and then install the plugins.
 
     $ curl -L -o ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -9,23 +20,19 @@ If the python3 provider is missing:
     $ python3 -m pip install --user --upgrade pynvim/
     $ nvim :UpdateRemotePlugin +qa
 
-Neovim configuate with CoC is on nvim-with-coc branch (is no longer support now)
-Latest changes is on master branch
+If you want to use neovim configuate with CoC checkout to `nvim-with-coc branch` (is no longer support now)
 
-### todo
-
-- [x] check nvim-autopairs and tree-sitter work together
-- [x] fix trouble with nvim icons (why is this doesn't work)
-- [x] may be i should rebuild my native lsp config
-- [ ] translte config (comments) to russian
-- [ ] multiple cursor (not exactly)
-- [ ] from .vim files to .lua
-- [ ] create docs by config (descr of features and mappings)
+But I recomend you to use neovim configuate with Native LSP coz it really faster and smarter
 
 ### posible bugs
 
+#### LSPInstaller doesn't install server automaticly
+If `LSPInstaller` doesn't install server automaticly do this command:
+
+    $ [sudo] npm i -g emmet-ls eslint typescript-language-server vls vscode-langservers-extracted 
+
 #### LSP: handle missing client_id in errorm message (like "got bad argument #2 to 'format'")
-Go to **Neovim/lsp dir** ```/usr/local/share/nvim/runtime/lua/vim/lsp```
+Go to **Neovim/lsp dir** `/usr/local/share/nvim/runtime/lua/vim/lsp`
 
 And replace your loop to this in line ~450
 
@@ -55,6 +62,18 @@ for k, fn in pairs(M) do
   end
 end
 ```
+
+### todo
+
+- [x] check nvim-autopairs and tree-sitter work together
+- [x] fix trouble with nvim icons (why is this doesn't work)
+- [x] may be i should rebuild my native lsp config
+- [ ] setup LSPInstaller
+- [ ] translte config (comments) to russian
+- [ ] multiple cursor (not exactly)
+- [ ] from .vim files to .lua
+- [ ] create docs by config (descr of features and mappings)
+
 
 <!-- ### useful links -->
 <!--  -->
