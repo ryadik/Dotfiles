@@ -35,6 +35,10 @@ nnoremap <TAB> :bn<cr>
 nnoremap <S-TAB> :bp<cr>
 nnoremap <c-w> :bp \|bd #<cr>
 
+" Todo comments -------------------------------------------------------------
+
+nnoremap <leader>td <cmd>TodoTrouble<cr>
+
 " Telescope -----------------------------------------------------------------
 
 " files
