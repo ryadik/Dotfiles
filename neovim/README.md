@@ -68,6 +68,7 @@ end
 - [x] check nvim-autopairs and tree-sitter work together
 - [x] fix trouble with nvim icons (why is this doesn't work)
 - [x] may be i should rebuild my native lsp config
+- [ ] check about vim folding (usefull feature)
 - [ ] setup LSPInstaller
 - [ ] translte config (comments) to russian
 - [ ] multiple cursor (not exactly)
