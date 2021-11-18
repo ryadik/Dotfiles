@@ -34,6 +34,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'max397574/better-escape.nvim'
 Plug 'terrortylor/nvim-comment'
+Plug 'folke/todo-comments.nvim'
 Plug 'windwp/nvim-autopairs'
 
 Plug 'airblade/vim-gitgutter'
