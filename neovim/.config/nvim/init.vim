@@ -36,8 +36,8 @@ set completeopt=menu,menuone,noselect
 
 " colorscheme darcula
 " colorscheme dracula 
-colorscheme onedark
-" colorscheme gruvbox
+" colorscheme onedark
+colorscheme gruvbox
 
 
 " Mappings ------------------------------------------------------------------
@@ -59,6 +59,9 @@ runtime ./plugins/configs/better-escape.vim
 
 " nvim-comment
 runtime ./plugins/configs/nvim-comment.vim
+
+" todo-comments.nvim
+runtime ./plugins/configs/todo-comments.vim
 
 " prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
