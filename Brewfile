@@ -29,6 +29,7 @@ brew "gnu-tar"
 brew "gzip"
 brew "unzip"
 brew "curl"
+brew "lazygit"
 
 # Casks
 cask "google-chrome"
