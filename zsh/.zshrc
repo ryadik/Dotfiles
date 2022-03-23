@@ -106,6 +106,7 @@ alias lg="lazygit"
 
 # python
 alias python="python3"
+alias pip="pip3"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
