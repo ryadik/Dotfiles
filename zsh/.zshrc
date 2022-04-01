@@ -101,6 +101,7 @@ alias bu="bundle update"
 # Overwrites
 alias ll='ls -ahl'
 alias port="lsof -i"
+alias kp="npx kill-port"
 
 # lazygit
 alias lg="lazygit"
