@@ -73,6 +73,7 @@ end
 - [ ] translte config (comments) to russian
 - [ ] multiple cursor (not exactly)
 - [ ] from .vim files to .lua
+- [ ] fix a vim themes conflict with a tmux theme
 - [ ] create docs by config (descr of features and mappings)
 
 
