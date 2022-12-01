@@ -36,8 +36,8 @@ set completeopt=menu,menuone,noselect
 
 " colorscheme darcula
 " colorscheme dracula 
-" colorscheme onedark
-colorscheme gruvbox
+colorscheme onedark
+" colorscheme gruvbox
 
 
 " Mappings ------------------------------------------------------------------
