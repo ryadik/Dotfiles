@@ -121,3 +121,7 @@ DEFAULT_USER="ericclaus"
 
 # pyenv
 eval "$(pyenv init -)"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
