@@ -1,10 +1,12 @@
 # Antigen
 #source $HOME/bin/antigen.zsh
-source /usr/local/share/antigen/antigen.zsh
+# source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 # asdf programming version manager
 #source $HOME/.asdf/asdf.sh
-source /usr/local/opt/asdf/libexec/asdf.sh
+# source /usr/local/opt/asdf/libexec/asdf.sh
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # scmpuff
 eval "$(scmpuff init -s)"
@@ -124,4 +126,4 @@ eval "$(pyenv init -)"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
