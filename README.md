@@ -8,7 +8,7 @@
 
 # Clone repository to your $HOME
 
-    $ git clone git@github.com:thnukid/dotfiles.git ~/.dotfiles
+    $ git clone git@github.com:k1ngsman-hub/Dotfiles.git ~/.dotfiles
     $ cd ~/.dotfiles
 
 # Install All the software packages
@@ -22,7 +22,8 @@
     $ python3 -m pip install --user --upgrade pynvim/
     $ nvim :UpdateRemotePlugin +qa
 
-
+# Add path for antigen and asdf into your .zshrc file
+    check path in brew logs or choose in .zshrc
 
 # Symlink dotfiles
 
