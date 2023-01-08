@@ -1,7 +1,7 @@
 lua << EOF
 
  -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -49,7 +49,7 @@ lspSymbol("Warning", "")
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'vuels', 'cssls', 'eslint', 'html', 'emmet_ls', 'angularls', 'jsonls' }
+local servers = { 'tsserver', 'vuels', 'cssls', 'eslint', 'html', 'emmet_ls', 'angularls', 'jsonls', 'vimls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
