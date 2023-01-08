@@ -2,7 +2,8 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'folke/trouble.nvim'
@@ -17,9 +18,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-vsnip'
 
-" glepnir is inactive and his lspsaga is outdate
-" Plug 'glepnir/lspsaga.nvim'
-Plug 'tami5/lspsaga.nvim', {'branch': 'nvim51'} " till glepnit goes back online
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -36,14 +35,12 @@ Plug 'max397574/better-escape.nvim'
 Plug 'terrortylor/nvim-comment'
 Plug 'folke/todo-comments.nvim'
 Plug 'windwp/nvim-autopairs'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'morhetz/gruvbox'
 Plug 'doums/darcula'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'joshdick/onedark.vim', { 'as': 'onedark' }
+Plug 'VDuchauffour/neodark.nvim', { 'as': 'neodark' }
 
 call plug#end()
