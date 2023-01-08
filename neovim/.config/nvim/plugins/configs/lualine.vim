@@ -1,4 +1,7 @@
 lua << END
+local function ryadik()
+  return [[ryadik]]
+end
 require'lualine'.setup{
   options = {
     icons_enabled = true,
@@ -19,15 +22,15 @@ require'lualine'.setup{
         path=1
       }
     },
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'encoding', ryadik, 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = {},
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {}
   },
