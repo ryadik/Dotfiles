@@ -1,14 +1,12 @@
 " Common --------------------------------------------------------------------
-
 " remap leader key
 let mapleader=" "
 :verbose inoremap <Tab>
-
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" remove highlight after searching
 nnoremap ,<space> :nohlsearch<CR>
-
 " shift+arrow selection
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
@@ -22,25 +20,26 @@ imap <S-Up> <Esc>v<Up>
 imap <S-Down> <Esc>v<Down>
 imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>
-
 " cut, copy, paste, undo
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
 map <C-v> pi
 imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
-
-" навигация в буфферах (табах)
+" buffer navigation
 nnoremap <TAB> :bn<cr>
 nnoremap <S-TAB> :bp<cr>
 nnoremap <c-w> :bp \|bd #<cr>
+" reload vim
+nnoremap <c-u> :w<cr>:%so<cr>
+vnoremap <c-u> :w<cr>:%so<cr>
+inoremap <c-u> :w<cr>:%so<cr>
 
 " Todo comments -------------------------------------------------------------
-
 nnoremap <leader>td <cmd>TodoTrouble<cr>
 
-" Telescope -----------------------------------------------------------------
 
+" Telescope -----------------------------------------------------------------
 " files
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fbr <cmd>Telescope file_browser hidden=true<cr>
@@ -62,12 +61,19 @@ nnoremap <leader>lgr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 nnoremap <leader>lgd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
 
 
+" Gitsigns
+nnoremap <leader>Gbl <cmd>lua require"gitsigns".blame_line{full=true}<CR>
+nnoremap <leader>Gtbl <cmd>Gitsigns toggle_current_line_blame<CR>
+nnoremap <leader>Gd <cmd>Gitsigns diffthis<CR>
+
+
 " LSP -----------------------------------------------------------------------
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" inoremap <silent><expr> <C-Space> compe#complete()
+" inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" mapping for compelition is here -> plugins/configs/nvim-cpm.vim 20:1
 
 
 " Trouble -------------------------------------------------------------------
@@ -97,3 +103,5 @@ nnoremap <silent><leader>gd :Lspsaga preview_definition<CR>
 nnoremap <silent> <leader>ld :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
+
+nnoremap <silent> <A-d> <cmd>Lspsaga open_floaterm<CR>
