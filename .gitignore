@@ -2,6 +2,6 @@ ssh/.ssh/id_rsa
 ssh/.ssh/id_rsa_thnukid
 ssh/.ssh/known_hosts
 ssh/.ssh/*.PEM
-
+ssh/
 neovim/.config/nvim/.netrwhist
 
