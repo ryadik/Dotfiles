@@ -3,41 +3,48 @@ runtime ./plugins/plug.vim
 
 
 " Settings ------------------------------------------------------------------
-set mouse=a
-set number
-set hidden
-set cursorline
-set scrolloff=10
-set nospell
-set nowrap
+set mouse=a " enable mouse working
+set number " enable row numeric
+set hidden " enable hide buffer
+set cursorline " glow cursor line
+set scrolloff=10 " offset for scroll
+set nospell " disable orphografic checker
+set nowrap " disable row wrap
+
+" tab settings
 set tabstop=2
 set shiftwidth=2
 set smartindent
 set expandtab
+set cindent " auto indent
+
 set encoding=utf8
-set history=5000
-set clipboard=unnamedplus
-set cindent
+set history=5000 " history of : commands
+set clipboard=unnamedplus " shared clipboard
 set noswapfile
+
+" split settings
 set splitbelow
 set splitright
-set termguicolors
-set cc=80
-set cmdheight=2 
+
+set termguicolors " for colorschemas
+set cc=80 " colorcolumn
+set cmdheight=2
 set updatetime=100
-set shortmess+=c
-set signcolumn=yes
-set laststatus=2
-set nosc noru nosm
+set shortmess+=c " buffer changing
+set signcolumn=yes " display column signs
+set laststatus=2 " always have statusline
+set nosc noru nosm " visual mods
 set lazyredraw
-set ignorecase
-set completeopt=menu,menuone,noselect
+set ignorecase " ignore case for search
+set completeopt=menu,menuone,noselect,preview " complete options 
 
-
+" Colorschemas --------------------------------------------------------------
 " colorscheme darcula
 " colorscheme dracula 
 colorscheme onedark
 " colorscheme gruvbox
+" colorscheme neodark
 
 
 " Mappings ------------------------------------------------------------------
@@ -63,9 +70,6 @@ runtime ./plugins/configs/nvim-comment.vim
 " todo-comments.nvim
 runtime ./plugins/configs/todo-comments.vim
 
-" prettier command for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
 " lualine
 runtime ./plugins/configs/lualine.vim
 
@@ -75,12 +79,17 @@ runtime ./plugins/configs/bufferline.vim
 " nvim-autopairs
 runtime ./plugins/configs/nvim-autopairs.vim
 
+" gitsings
+runtime ./plugins/configs/gitsigns.vim
+
 
 " Native LSP ----------------------------------------------------------------
-runtime ./plugins/configs/lspconfig.vim
 
-" lsp-installer
-runtime ./plugins/configs/lspinstaller.vim
+" Mason ex. lspinstaller
+runtime ./plugins/configs/mason.vim
+
+" LSP configurations
+runtime ./plugins/configs/lspconfig.vim
 
 " nvim-cmp
 runtime ./plugins/configs/nvim-cmp.vim
