@@ -2,7 +2,7 @@
 
 ### What you should have
 
-- `Neovim =v0.5.1`
+- `Neovim =v0.7`
 - `NodeJS >=v14`
 - `Yarn`
 - I recomend update `npm` to latest version
@@ -69,11 +69,10 @@ end
 - [x] fix trouble with nvim icons (why is this doesn't work)
 - [x] may be i should rebuild my native lsp config
 - [ ] check about vim folding (usefull feature)
-- [ ] setup LSPInstaller
+- [x] setup LSPInstaller
 - [ ] translte config (comments) to russian
 - [ ] multiple cursor (not exactly)
 - [ ] from .vim files to .lua
-- [ ] fix a vim themes conflict with a tmux theme
 - [ ] create docs by config (descr of features and mappings)
 
 
