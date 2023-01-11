@@ -41,8 +41,9 @@ set completeopt=menu,menuone,noselect,preview " complete options
 
 " Colorschemas --------------------------------------------------------------
 " colorscheme darcula
+colorscheme darcula-solid
 " colorscheme dracula 
-colorscheme onedark
+" colorscheme onedark
 " colorscheme gruvbox
 " colorscheme neodark
 

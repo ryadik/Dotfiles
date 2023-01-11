@@ -39,6 +39,15 @@ inoremap <c-u> :w<cr>:%so<cr>
 nnoremap <leader>td <cmd>TodoTrouble<cr>
 
 
+" NvimTree
+nnoremap <C-n> <cmd>NvimTreeToggle<cr>
+vnoremap <C-n> <cmd>NvimTreeToggle<cr>
+inoremap <C-n> <cmd>NvimTreeToggle<cr>
+nnoremap <leader>ntf <cmd>NvimTreeFindFile<cr>
+vnoremap <leader>ntf <cmd>NvimTreeFineFile<cr>
+inoremap <leader>ntf <cmd>NvimTreeFindFile<cr>
+
+
 " Telescope -----------------------------------------------------------------
 " files
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
@@ -98,7 +107,7 @@ nnoremap <silent><leader>ls :Lspsaga signature_help<CR>
 
 nnoremap <silent><leader>rn :Lspsaga rename<CR>
 
-nnoremap <silent><leader>gd :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>gd :Lspsaga peek_definition<CR>
 
 nnoremap <silent> <leader>ld :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>

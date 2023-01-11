@@ -6,6 +6,7 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+
 Plug 'folke/trouble.nvim'
 
 Plug 'hrsh7th/nvim-cmp'
@@ -42,5 +43,7 @@ Plug 'doums/darcula'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'joshdick/onedark.vim', { 'as': 'onedark' }
 Plug 'VDuchauffour/neodark.nvim', { 'as': 'neodark' }
+Plug 'briones-gabriel/darcula-solid.nvim'
+Plug 'rktjmp/lush.nvim'
 
 call plug#end()
