@@ -41,7 +41,8 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'doums/darcula'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'joshdick/onedark.vim', { 'as': 'onedark' }
+Plug 'navarasu/onedark.nvim'
+Plug 'tiagovla/tokyodark.nvim'
 Plug 'VDuchauffour/neodark.nvim', { 'as': 'neodark' }
 Plug 'briones-gabriel/darcula-solid.nvim'
 Plug 'rktjmp/lush.nvim'
