@@ -86,6 +86,12 @@ runtime ./plugins/configs/nvim-autopairs.vim
 " gitsings
 runtime ./plugins/configs/gitsigns.vim
 
+" indexLine
+runtime ./plugins/configs/indentLine.vim
+
+" dashboard
+runtime ./plugins/configs/dashboard.vim
+
 
 " Native LSP ----------------------------------------------------------------
 

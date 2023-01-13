@@ -37,6 +37,7 @@ Plug 'terrortylor/nvim-comment'
 Plug 'folke/todo-comments.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'glepnir/dashboard-nvim'
 
 Plug 'morhetz/gruvbox'
 Plug 'doums/darcula'
