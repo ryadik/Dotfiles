@@ -41,11 +41,14 @@ set completeopt=menu,menuone,noselect,preview " complete options
 
 " Colorschemas --------------------------------------------------------------
 " colorscheme darcula
-colorscheme darcula-solid
+" colorscheme darcula-solid
 " colorscheme dracula 
-" colorscheme onedark
 " colorscheme gruvbox
 " colorscheme neodark
+colorscheme tokyodark
+runtime ./plugins/configs/onedark.vim  " setup for colorscheme
+" colorscheme onedark
+
 
 
 " Mappings ------------------------------------------------------------------
