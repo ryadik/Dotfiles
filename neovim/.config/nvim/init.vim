@@ -95,6 +95,9 @@ runtime ./plugins/configs/dashboard.vim
 " gomove
 runtime ./plugins/configs/gomove.vim
 
+" cursorline
+runtime ./plugins/configs/nvim-cursorline.vim
+
 
 " Native LSP ----------------------------------------------------------------
 
