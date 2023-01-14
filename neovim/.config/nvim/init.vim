@@ -92,6 +92,9 @@ runtime ./plugins/configs/indentLine.vim
 " dashboard
 runtime ./plugins/configs/dashboard.vim
 
+" gomove
+runtime ./plugins/configs/gomove.vim
+
 
 " Native LSP ----------------------------------------------------------------
 

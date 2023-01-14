@@ -70,10 +70,26 @@ nnoremap <leader>lgr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 nnoremap <leader>lgd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
 
 
+" Renamer
+inoremap <silent> <F2> <cmd>lua require('renamer').rename()<cr>
+
+
 " Gitsigns
 nnoremap <leader>Gbl <cmd>lua require"gitsigns".blame_line{full=true}<CR>
 nnoremap <leader>Gtbl <cmd>Gitsigns toggle_current_line_blame<CR>
 nnoremap <leader>Gd <cmd>Gitsigns diffthis<CR>
+
+ 
+" Gomove
+nmap <left> <Plug>GoNSMLeft
+nmap <down> <Plug>GoNSMDown
+nmap <up> <Plug>GoNSMUp
+nmap <right> <Plug>GoNSMRight
+
+xmap <left> <Plug>GoVSMLeft
+xmap <down> <Plug>GoVSMDown
+xmap <up> <Plug>GoVSMUp
+xmap <right> <Plug>GoVSMRight
 
 
 " LSP -----------------------------------------------------------------------
