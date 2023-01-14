@@ -1,7 +1,7 @@
 lua << EOF
 require("gomove").setup {
   -- whether or not to map default key bindings, (true/false)
-  map_defaults = false,
+  map_defaults = true,
   -- whether or not to reindent lines moved vertically (true/false)
   reindent = true,
   -- whether or not to undojoin same direction moves (true/false)

@@ -81,15 +81,26 @@ nnoremap <leader>Gd <cmd>Gitsigns diffthis<CR>
 
  
 " Gomove
-nmap <left> <Plug>GoNSMLeft
-nmap <down> <Plug>GoNSMDown
-nmap <up> <Plug>GoNSMUp
-nmap <right> <Plug>GoNSMRight
+" nmap <left> <Plug>GoNSMLeft
+" nmap <down> <Plug>GoNSMDown
+" nmap <up> <Plug>GoNSMUp
+" nmap <right> <Plug>GoNSMRight
+"
+" xmap <left> <Plug>GoVSMLeft
+" xmap <down> <Plug>GoVSMDown
+" xmap <up> <Plug>GoVSMUp
+" xmap <right> <Plug>GoVSMRight
 
-xmap <left> <Plug>GoVSMLeft
-xmap <down> <Plug>GoVSMDown
-xmap <up> <Plug>GoVSMUp
-xmap <right> <Plug>GoVSMRight
+" nmap <˙> <Plug>GoNSMLeft
+" nmap <∆> <Plug>GoNSMDown
+" nmap <˚> <Plug>GoNSMUp
+" nmap <¬> <Plug>GoNSMRight
+"
+" xmap <˙> <Plug>GoVSMLeft
+" xmap <∆> <Plug>GoVSMDown
+" xmap <˚> <Plug>GoVSMUp
+" xmap <¬> <Plug>GoVSMRight
+
 
 
 " LSP -----------------------------------------------------------------------
