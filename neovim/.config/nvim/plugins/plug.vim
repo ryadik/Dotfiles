@@ -23,6 +23,8 @@ Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'm00qek/baleia.nvim', { 'tag': 'v1.2.0' }
+Plug 'samodostal/image.nvim'
 
 Plug 'akinsho/bufferline.nvim'
 Plug 'Yggdroot/indentLine'

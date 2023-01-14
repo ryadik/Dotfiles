@@ -98,6 +98,9 @@ runtime ./plugins/configs/gomove.vim
 " cursorline
 runtime ./plugins/configs/nvim-cursorline.vim
 
+" images
+runtime ./plugins/configs/nvim-images.vim
+
 
 " Native LSP ----------------------------------------------------------------
 
