@@ -30,6 +30,9 @@ brew "gzip"
 brew "unzip"
 brew "curl"
 brew "lazygit"
+brew "thezoraiz/ascii-image-converter/ascii-image-converter"
+brew "figlet"
+brew "lolcat"
 
 # Casks
 cask "google-chrome"
