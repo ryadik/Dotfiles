@@ -11,6 +11,9 @@ lua << EOF
         ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
       })
     },
+    completion = {
+      autocomplete = false
+    },
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
@@ -26,6 +29,10 @@ lua << EOF
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<TAB>'] = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = true,
+      })
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
