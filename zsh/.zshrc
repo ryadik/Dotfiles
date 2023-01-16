@@ -63,7 +63,9 @@ alias nvbu="nvim +PlugUpdate +qa"
 # tmux
 alias tls="tmux ls"
 alias tos="tmux attach -t"
+alias tws="~/.dotfiles/tmux/tmux_ws.sh"
 alias tns="tmux new -s"
+alias trs="tmux rename-session -t"
 alias tks="tmux kill-session -t"
 
 # Git aliases
