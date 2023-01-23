@@ -19,6 +19,8 @@ Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-vsnip'
 
+Plug 'Exafunction/codeium.vim'
+
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 Plug 'nvim-lua/plenary.nvim'

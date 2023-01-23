@@ -12,7 +12,7 @@ lua << EOF
       })
     },
     completion = {
-      autocomplete = false
+      -- autocomplete = false
     },
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -36,6 +36,7 @@ lua << EOF
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'path' },
       { name = 'vsnip' }, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.

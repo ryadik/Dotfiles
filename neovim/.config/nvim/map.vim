@@ -112,6 +112,11 @@ nnoremap <leader>Gd <cmd>Gitsigns diffthis<CR>
 " mapping for compelition is here -> plugins/configs/nvim-cpm.vim 20:1
 
 
+" Codeium
+nnoremap <leader>cid <cmd>Codeium Disable<cr>
+nnoremap <leader>cie <cmd>Codeium Enable<cr>
+
+
 " Trouble -------------------------------------------------------------------
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
