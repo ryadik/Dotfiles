@@ -56,9 +56,9 @@ bindkey '^Z' fancy-ctrl-z
 alias vim="nvim"
 alias v="nvim"
 
-# Update neovim bundles
-alias nvbi="nvim +PlugInstall +qa"
-alias nvbu="nvim +PlugUpdate +qa"
+# Change neovim bundles
+alias vks='NVIM_APPNAME="nvim-kickstart" nvim'
+alias vlz='NVIM_APPNAME="lazyvim" nvim'
 
 # tmux
 alias tls="tmux ls"

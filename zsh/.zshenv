@@ -2,7 +2,8 @@
 export PATH="/usr/local/bin/:$PATH"
 
 # Set path correctly for Homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/opt/homebrew/bin:/usr/localsbin:$PATH
 
 # Vim FTW
 export EDITOR=nvim

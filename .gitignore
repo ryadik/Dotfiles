@@ -5,3 +5,4 @@ ssh/.ssh/*.PEM
 ssh/
 neovim/.config/nvim/.netrwhist
 
+.idea/
