@@ -6,3 +6,4 @@ ssh/
 neovim/.config/nvim/.netrwhist
 
 .idea/
+.vscode/
