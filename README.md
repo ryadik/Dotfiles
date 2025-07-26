@@ -1,44 +1,141 @@
-# dotfiles
+# Ryadik's macOS Dotfiles
+Набор конфигоф и скриптов для быстрой и автоматизированной настройки моего рабочего окружения 
+на macOS.
 
-> These are my dotfiles. There are many like them, but these ones are mine.
+## Особенности
+Эти dotfiles настраивают и управляют следующими ключевыми компонентами:
 
-# Install Brew
+*   **Zsh**: Основная оболочка с Antigen и Oh-my-zsh  
+*   **Tmux**: Терминальный оконный менеджер
+*   **Neovim**: Используется пред-настроенный AstroVim (тянется в install.sh, чтобы не хранить его здесь и так он всегда будет актуальный)
+*   **Kitty**: Основной терминал
+*   **ASDF**: Используется для управления python и nodejs версиями
+*   **Git**: Настроены личные и рабочие правила
+*   **LazyGit**: GUI для git в терминале
+*   **macOS Defaults**: Автоматизированные настройки macOS для Finder, Dock. (Experimental)
+*   **Stow**: Для симлинков всех конфигов из репозитория в нужные места в домашнем каталоге
 
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+## Требования к установке
+*   **Mac**: Все пути стоят для Mac с Apple Silicone (M1 и выше)
+*   **OS**: Тестировалось только на актуальной системе
+*   **Утилиты**: `curl` и `unzip` (обычно предустановлены).
 
-# Clone repository to your $HOME
+## Установка
 
-    $ git clone git@github.com:k1ngsman-hub/Dotfiles.git ~/.dotfiles
-    $ cd ~/.dotfiles
+### Git Free
+Процесс установки разработан для **новой или относительно чистой системы macOS**. Если у вас уже установлены `brew`, `nvm`, `pyenv` или другие менеджеры версий/пакеты, рекомендуется сначала их удалить, чтобы избежать конфликтов.
 
-# Install All the software packages
+В стандартном терминале macOS (`Terminal.app`) выполните следующую команду.
 
-    $ brew bundle
-    $ curl -L -o ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    $ nvim +PlugInstall +qa
-
-#### If the python3 provider is missing:
-
-    $ python3 -m pip install --user --upgrade pynvim/
-    $ nvim :UpdateRemotePlugin +qa
-
-# Add path for antigen and asdf into your .zshrc file
-    check path in brew logs or choose in .zshrc
-
-# Tmux
-Run this command in your terminal:
 ```bash
-$ chmod +x ~/.dotfiles/tmux/tmux_ws.sh
+curl -L "https://github.com/ryadik/dotfiles/archive/main.zip" -o "/tmp/dotfiles_temp.zip" && unzip -q "/tmp/dotfiles_temp.zip" -d "/tmp/" && mv "/tmp/dotfiles-main" "$HOME/.dotfiles" && rm "/tmp/dotfiles_temp.zip" && chmod +x "$HOME/.dotfiles/install.sh" && "$HOME/.dotfiles/install.sh"
 ```
 
+Эта команда скачает репозиторий `Dotfiles`, распакует его в `~/.dotfiles`, а затем запустит основной скрипт `install.sh`.
 
-# Symlink dotfiles
+### Ручная установка
+Если у вас уже имеется установленный `Git`, либо вы хотите скачать репозиторий самостоятельно, то рекомендуется разместить файлы по пути `$HOME/.dotfiles/` (обычно `$HOME = /Users/user_name = ~/`) для избежания ошибок с путями.
 
-    $ stow git alacritty neovim tmux personal-git ruby ssh zsh
+После того как вы скачаете проект, выполните эту команду, чтобы `install.sh` стал исполняемым
+```bash
+chmod +x "$HOME/.dotfiles/install.sh"
+```
+Затем запустите скрипт `install.sh` командой
+```bash
+$HOME/.dotfiles/install.sh
+```
 
-If you got this error:
+### После выполнения `install.sh`
+
+1.  **Перезапустите терминал:** Закройте текущий терминал и откройте новый. Это необходимо для того, чтобы Zsh полностью загрузил все новые настройки, плагины и переменные окружения.
+2.  **Установите шрифты (опционально):** По стандарту будет использоваться JetBrains Mono Nerd Font. Шрифты находятся в папке `.dotfiles/data/fonts`. Это обеспечит корректное отображение иконок и символов в терминале.
+4.  **Настройте SSH-ключи (опционально):** Добавьте ваши SSH-ключи и настройте `ssh-agent`, если это необходимо для работы с Git-репозиториями.
+
+## Использование и управление
+*   **Обновление Homebrew пакетов:**
+    Для обновления всех формул и приложений, установленных через Homebrew:
+    ```bash
+    brew update && brew upgrade && brew bundle install --file="$HOME/.dotfiles/Brewfile"
+    ```
     
-    WARNING! unstowing bash would cause conflicts:
-    * existing target is neither a link nor a directory: [some dir]
+*   **Запись изменений в Brewfile:**
+    Если вы установили новые пакеты вручную через `brew install` или `brew cask install` и хотите добавить их в `Brewfile`:
+    ```bash
+    dfu
+    ```
+    этот алиас закоммитит изменения автоматически. **ПРОВЕРЬТЕ ПЕРЕД ПУШЕМ!**
+  
+* **Перелинковка Dotfiles:**
+    Если вы вносите изменения в исходные файлы dotfiles и хотите пересоздать симлинки используйте алиас:
+    ```bash
+    dfs
+    ```
+*   **Управление версиями языков (ASDF):**
+    *   Установка новой версии Python: 
+        ```bash
+         asdf install python <version>
+        ```
+    *   Установка новой версии NodeJS:
+        ```bash
+         asdf install nodejs <version>
+        ```
 
-Delete your current config files and try again
+## Хоткеи и Алиасы
+
+Здесь много различных алиасов под разные задачи, свои хоткеи и переопределение дефолтных. Например для **Tmux** переопределен **префикс:** `Ctrl+a` (вместо `Ctrl+b`);
+для **Git** есть сокращение `g`: для `git`.
+Более подробно можно узнать в самих конфигах. Алиса лежат в `.dotfiles/zsh/.zshrc`. Хоткеи индивидуально в своих конфигах.
+
+## Структура Dotfiles
+
+```
+.
+├── data
+│   └── fonts                     # Шрифты (для ручной установки)
+│       └── ...
+│
+├── git                           # Конфигурация Git
+│   ├── .corp.gitconfig
+│   ├── .gitconfig
+│   └── .gitignore_global
+│
+├── kitty                         # Конфигурация Kitty
+│   └── .config
+│       └── kitty
+│           ├── kitty.conf
+│           └── themes
+│               └── dracula.conf
+│
+├── lazygit                       # Конфигурация Lazygit
+│   └── Library
+│       └── Application Support
+│           └── lazygit
+│               └── config.yml
+│
+├── neovim                        # Конфигурация Neovim
+│   ├── .config
+│   │   └── nvim
+│   └── .vimrc
+│
+├── ruby                          # Конфигурация Ruby
+│   └── .gemrc
+│
+├── tmux                          # Конфигурация Tmux
+│   ├── .stow-local-ignore
+│   ├── .tmux.conf
+│   └── tmux_ws.sh
+│
+├── zsh                           # Конфигурация Zsh
+│   ├── .zshenv
+│   └── .zshrc
+│
+├── Brewfile                      # Определяет все формулы и каски Homebrew для установки
+├── install.sh                    # Основной скрипт установки
+├── LICENSE                       # Лицензия (если есть)
+├── README.md                     # Этот файл
+```
+
+## Устранение неполадок
+
+*   **"Команда не найдена"**: Убедитесь, что ваш терминал был перезапущен после установки. Проверьте ваш `$PATH` (`echo $PATH`).
+*   **Проблемы с отображением символов/иконок**: Убедитесь, что вы установили Nerd Fonts (например, JetBrains Mono Nerd Font) в macOS и выбрали их в настройках Kitty.
