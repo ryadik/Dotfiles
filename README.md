@@ -25,6 +25,13 @@
 # Add path for antigen and asdf into your .zshrc file
     check path in brew logs or choose in .zshrc
 
+# Tmux
+Run this command in your terminal:
+```bash
+$ chmod +x ~/.dotfiles/tmux/tmux_ws.sh
+```
+
+
 # Symlink dotfiles
 
     $ stow git alacritty neovim tmux personal-git ruby ssh zsh
