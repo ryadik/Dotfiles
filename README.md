@@ -1,141 +1,167 @@
-# Ryadik's macOS Dotfiles
-Набор конфигоф и скриптов для быстрой и автоматизированной настройки моего рабочего окружения 
-на macOS.
+#  Dotfiles
 
-## Особенности
-Эти dotfiles настраивают и управляют следующими ключевыми компонентами:
+A collection of configs and scripts for quickly and automatically setting up my working environment on macOS.
 
-*   **Zsh**: Основная оболочка с Antigen и Oh-my-zsh  
-*   **Tmux**: Терминальный оконный менеджер
-*   **Neovim**: Используется пред-настроенный AstroVim (тянется в install.sh, чтобы не хранить его здесь и так он всегда будет актуальный)
-*   **Kitty**: Основной терминал
-*   **ASDF**: Используется для управления python и nodejs версиями
-*   **Git**: Настроены личные и рабочие правила
-*   **LazyGit**: GUI для git в терминале
-*   **macOS Defaults**: Автоматизированные настройки macOS для Finder, Dock. (Experimental)
-*   **Stow**: Для симлинков всех конфигов из репозитория в нужные места в домашнем каталоге
+**[Русская версия](README.russian.md)**
 
-## Требования к установке
-*   **Mac**: Все пути стоят для Mac с Apple Silicone (M1 и выше)
-*   **OS**: Тестировалось только на актуальной системе
-*   **Утилиты**: `curl` и `unzip` (обычно предустановлены).
+## Table of Contents
 
-## Установка
+*   [✨ Features](#-features)
+*   [🚀 Installation Requirements](#-requirements)
+*   [💻 Installation](#-installation)
+    *   [Git-Free Installation](#git-free)
+    *   [Manual Installation](#manual)
+    *   [After Running `install.sh`](#after-running-installsh)
+*   [⚙️ Usage and Management](#-usage-and-management)
+*   [⌨️ Hotkeys and Aliases](#-hotkeys-and-aliases)
+*   [📂 Dotfiles Structure](#-dotfiles-structure)
+*   [⚠️ Troubleshooting](#-troubleshooting)
 
-### Git Free
-Процесс установки разработан для **новой или относительно чистой системы macOS**. Если у вас уже установлены `brew`, `nvm`, `pyenv` или другие менеджеры версий/пакеты, рекомендуется сначала их удалить, чтобы избежать конфликтов.
+---
 
-В стандартном терминале macOS (`Terminal.app`) выполните следующую команду.
+## ✨ Features
+
+These dotfiles configure and manage the following key components:
+
+*   **Zsh**: Main shell with Antigen and Oh-my-zsh.
+*   **Tmux**: Terminal window manager.
+*   **Neovim**: Uses pre-configured AstroVim (pulled in `install.sh` so it's not stored here and is always up-to-date).
+*   **Kitty**: Main terminal.
+*   **ASDF**: Used for managing Python and Node.js versions.
+*   **Git**: Personal and work rules are configured.
+*   **LazyGit**: GUI for Git in the terminal.
+*   **macOS Defaults**: Automated macOS settings for Finder, Dock. (Experimental)
+*   **Stow**: For symlinking all configs from the repository to the correct locations in the home directory.
+
+## 🚀 Requirements
+
+*   **Mac**: All paths are set for Macs with Apple Silicon (M1 and higher).
+*   **OS**: Tested only on the latest system.
+*   **Utilities**: `curl` and `unzip` (usually pre-installed).
+
+## 💻 Installation
+
+### Git-Free
+
+The installation process is designed for a **new or relatively clean macOS system**. If you already have `brew`, `nvm`, `pyenv`, or other version managers/packages installed, it is recommended to uninstall them first to avoid conflicts.
+
+In the standard macOS terminal (`Terminal.app`), execute the following command.
 
 ```bash
 curl -L "https://github.com/ryadik/dotfiles/archive/main.zip" -o "/tmp/dotfiles_temp.zip" && unzip -q "/tmp/dotfiles_temp.zip" -d "/tmp/" && mv "/tmp/dotfiles-main" "$HOME/.dotfiles" && rm "/tmp/dotfiles_temp.zip" && chmod +x "$HOME/.dotfiles/install.sh" && "$HOME/.dotfiles/install.sh"
 ```
 
-Эта команда скачает репозиторий `Dotfiles`, распакует его в `~/.dotfiles`, а затем запустит основной скрипт `install.sh`.
+This command will download the `Dotfiles` repository, extract it to `~/.dotfiles`, and then run the main `install.sh` script.
 
-### Ручная установка
-Если у вас уже имеется установленный `Git`, либо вы хотите скачать репозиторий самостоятельно, то рекомендуется разместить файлы по пути `$HOME/.dotfiles/` (обычно `$HOME = /Users/user_name = ~/`) для избежания ошибок с путями.
+### Manual
 
-После того как вы скачаете проект, выполните эту команду, чтобы `install.sh` стал исполняемым
+If you already have `Git` installed, or want to download the repository yourself, it is recommended to place the files at `$HOME/.dotfiles/` (usually `$HOME = /Users/user_name = ~/`) to avoid path errors.
+
+After you have downloaded the project, execute this command to make `install.sh` executable:
+
 ```bash
 chmod +x "$HOME/.dotfiles/install.sh"
 ```
-Затем запустите скрипт `install.sh` командой
+
+Then, run the `install.sh` script with the command:
+
 ```bash
 $HOME/.dotfiles/install.sh
 ```
 
-### После выполнения `install.sh`
+### After Running `install.sh`
 
-1.  **Перезапустите терминал:** Закройте текущий терминал и откройте новый. Это необходимо для того, чтобы Zsh полностью загрузил все новые настройки, плагины и переменные окружения.
-2.  **Установите шрифты (опционально):** По стандарту будет использоваться JetBrains Mono Nerd Font. Шрифты находятся в папке `.dotfiles/data/fonts`. Это обеспечит корректное отображение иконок и символов в терминале.
-4.  **Настройте SSH-ключи (опционально):** Добавьте ваши SSH-ключи и настройте `ssh-agent`, если это необходимо для работы с Git-репозиториями.
+1.  **Restart your terminal:** Close the current terminal and open a new one. This is necessary for Zsh to fully load all new settings, plugins, and environment variables.
+2.  **Install Fonts (optional):** By default, JetBrains Mono Nerd Font will be used. Fonts are located in the `.dotfiles/data/fonts` folder. This will ensure correct display of icons and symbols in the terminal.
+3.  **Configure SSH Keys (optional):** Add your SSH keys and configure `ssh-agent` if necessary for working with Git repositories.
 
-## Использование и управление
-*   **Обновление Homebrew пакетов:**
-    Для обновления всех формул и приложений, установленных через Homebrew:
+## ⚙️ Usage and Management
+
+*   **Updating Homebrew Packages:**
+    To update all formulae and applications installed via Homebrew:
     ```bash
     brew update && brew upgrade && brew bundle install --file="$HOME/.dotfiles/Brewfile"
     ```
-    
-*   **Запись изменений в Brewfile:**
-    Если вы установили новые пакеты вручную через `brew install` или `brew cask install` и хотите добавить их в `Brewfile`:
+
+*   **Dumping Changes to Brewfile:**
+    If you have installed new packages manually via `brew install` or `brew cask install` and want to add them to your `Brewfile`:
     ```bash
     dfu
     ```
-    этот алиас закоммитит изменения автоматически. **ПРОВЕРЬТЕ ПЕРЕД ПУШЕМ!**
-  
-* **Перелинковка Dotfiles:**
-    Если вы вносите изменения в исходные файлы dotfiles и хотите пересоздать симлинки используйте алиас:
+    This alias will commit changes automatically. **CHECK BEFORE PUSHING!**
+
+*   **Restowing Dotfiles:**
+    If you make changes to the source dotfiles and want to recreate the symlinks, use the alias:
     ```bash
     dfs
     ```
-*   **Управление версиями языков (ASDF):**
-    *   Установка новой версии Python: 
+*   **Language Version Management (ASDF):**
+    *   Install a new Python version:
         ```bash
-         asdf install python <version>
+        asdf install python <version>
         ```
-    *   Установка новой версии NodeJS:
+    *   Install a new NodeJS version:
         ```bash
-         asdf install nodejs <version>
+        asdf install nodejs <version>
         ```
 
-## Хоткеи и Алиасы
+## ⌨️ Hotkeys and Aliases
 
-Здесь много различных алиасов под разные задачи, свои хоткеи и переопределение дефолтных. Например для **Tmux** переопределен **префикс:** `Ctrl+a` (вместо `Ctrl+b`);
-для **Git** есть сокращение `g`: для `git`.
-Более подробно можно узнать в самих конфигах. Алиса лежат в `.dotfiles/zsh/.zshrc`. Хоткеи индивидуально в своих конфигах.
+There are many different aliases for various tasks, custom hotkeys, and redefinitions of default ones. For example, for **Tmux**, the **prefix:** is redefined to `Ctrl+a` (instead of `Ctrl+b`); for **Git** there is an abbreviation `g` for `git`.
+More details can be found in the configs themselves. Aliases are located in `.dotfiles/zsh/.zshrc`. Hotkeys are individually defined in their respective configs.
 
-## Структура Dotfiles
+## 📂 Dotfiles Structure
 
 ```
 .
 ├── data
-│   └── fonts                     # Шрифты (для ручной установки)
+│   └── fonts                     # Fonts (for manual installation)
 │       └── ...
 │
-├── git                           # Конфигурация Git
+├── git                           # Git configuration
 │   ├── .corp.gitconfig
 │   ├── .gitconfig
 │   └── .gitignore_global
 │
-├── kitty                         # Конфигурация Kitty
+├── kitty                         # Kitty configuration
 │   └── .config
 │       └── kitty
 │           ├── kitty.conf
 │           └── themes
 │               └── dracula.conf
 │
-├── lazygit                       # Конфигурация Lazygit
+├── lazygit                       # Lazygit configuration
 │   └── Library
 │       └── Application Support
 │           └── lazygit
 │               └── config.yml
 │
-├── neovim                        # Конфигурация Neovim
+├── neovim                        # Neovim configuration
 │   ├── .config
 │   │   └── nvim
 │   └── .vimrc
 │
-├── ruby                          # Конфигурация Ruby
+├── ruby                          # Ruby configuration
 │   └── .gemrc
 │
-├── tmux                          # Конфигурация Tmux
+├── tmux                          # Tmux configuration
 │   ├── .stow-local-ignore
 │   ├── .tmux.conf
 │   └── tmux_ws.sh
 │
-├── zsh                           # Конфигурация Zsh
+├── zsh                           # Zsh configuration
 │   ├── .zshenv
 │   └── .zshrc
 │
-├── Brewfile                      # Определяет все формулы и каски Homebrew для установки
-├── install.sh                    # Основной скрипт установки
-├── LICENSE                       # Лицензия (если есть)
-├── README.md                     # Этот файл
+├── Brewfile                      # Defines all Homebrew formulae and casks to install
+├── install.sh                    # Main installation script
+├── LICENSE                       # License (if applicable)
+├── README.md                     # This file
 ```
 
-## Устранение неполадок
+## ⚠️ Troubleshooting
 
-*   **"Команда не найдена"**: Убедитесь, что ваш терминал был перезапущен после установки. Проверьте ваш `$PATH` (`echo $PATH`).
-*   **Проблемы с отображением символов/иконок**: Убедитесь, что вы установили Nerd Fonts (например, JetBrains Mono Nerd Font) в macOS и выбрали их в настройках Kitty.
+*   **"Command not found"**: Ensure your terminal has been restarted after installation. Check your `$PATH` (`echo $PATH`).
+*   **Symbol/Icon display issues**: Make sure you have installed Nerd Fonts (e.g., JetBrains Mono Nerd Font) in macOS and selected them in your Kitty settings.
+
+---
