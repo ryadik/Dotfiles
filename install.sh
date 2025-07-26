@@ -131,7 +131,7 @@ stow --restow --target="$HOME" git kitty lazygit neovim ruby tmux zsh || log_err
 
 log_success "Dotfiles stowed successfully."
 
-# --- 7. Post-Stow / Language Manager Setup (requires sourced dotfiles for asdf/pyenv) ---
+# --- 7. Post-Stow / Language Manager Setup ---
 log_info "Running post-stow configurations (asdf, pyenv, language runtimes)..."
 
 # Source ASDF for the current script session
@@ -157,6 +157,17 @@ if command_exists asdf && [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
   asdf global nodejs "$NODEJS_VERSION" || log_warn "Failed to set global Node.js to $NODEJS_VERSION. Please set manually if needed."
 
   log_success "Python and Node.js versions set via ASDF."
+
+  # --- NPM Global Packages ---
+  if command_exists npm; then
+    log_info "Installing global NPM packages..."
+
+    npm install -g npm-check-updates || log_warn "Failed to install npm-check-updates globally."
+
+    log_success "Global NPM packages installed."
+  else
+    log_warn "NPM not found. Skipping global NPM packages installation."
+  fi
 
 else
   log_warn "ASDF not found or not initialized for this script. Skipping ASDF language installations."
