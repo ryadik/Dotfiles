@@ -45,10 +45,6 @@ fi
 alias vim="nvim"
 alias v="nvim"
 
-# --- Neovim configs Aliases ---
-alias kickstartvim='NVIM_APPNAME="nvim-kickstart" nvim'
-alias lazyvim='NVIM_APPNAME="lazyvim" nvim'
-
 # --- Tmux Aliases ---
 alias tls="tmux ls"
 alias tos="tmux attach -t"
