@@ -33,6 +33,9 @@ EOBUNDLES
 
 antigen apply
 
+# --- Zoxide Smart CD ---
+eval "$(zoxide init zsh)"
+
 # --- Editor Configuration ---
 # Set preferred editor based on session type (local vs. SSH)
 if [[ -n $SSH_CONNECTION ]]; then
@@ -89,26 +92,46 @@ alias nrb="npm run build"
 alias nud="npm update"
 alias nug="npm upgrade"
 alias ni="npm install"
+alias ncu="npm-check-updates"
+alias ncuu="npm-check-updates -u && npm install"
 
-# --- Utility Aliases / Overwrites ---
-alias ll='ls -ahl'
+# --- File System Aliases ---
+# alias ll='ls -ahl'
+alias ls="eza -a --icons"
+alias ll="eza -al --icons --git"
+alias tree="eza -T --icons"
+alias lt="ll -a --tree --level=2 --git"
+alias cat="bat --paging=never"
+alias cat_p="bat"
+
+# --- Utility Aliases ---
 alias port="lsof -i"
 alias kp="npx kill-port"
 alias lg="lazygit"
 alias clear_modules="rm -rf ./node_modules ; rm ./package-lock.json"
+alias code="code ./"
+alias ws="webstorm"
+
+# --- Brew Aliases ---
+alias hbup="brew update"
+alias hbug="brew upgrade"
+alias hbs="brew search"
+alias hbi="brew install"
+alias hbui="brew uninstall"
+
+# --- Bundle Aliases ---
+alias dfu="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile && git -C $HOME/.dotfiles/ add . && git -C $HOME/.dotfiles/ commit -m 'feat(bundle): SYSTEM update Brewfile via brew bundle dump'"
+alias dfs="stow --restow --target=$HOME git kitty lazygit neovim ruby tmux zsh"
 
 # --- Python Aliases ---
 alias python="python3"
 alias pip="pip3"
 
-# --- Zsh Completion & Prompt Settings ---
-# Display red dots whilst waiting for completion (optional visual feedback)
+# --- Zsh Vars ---
 COMPLETION_WAITING_DOTS="true"
-
-# Hide hostname from prompt when logged in as DEFAULT_USER
 DEFAULT_USER="ryadik"
+BAT_THEME="Visual Studio Dark+"
 
 # --- Language Version Managers (Post-Antigen/Core setup) ---
-# Pyenv initialization (important to be sourced after PATH is mostly set)
 eval "$(pyenv init -)"
 
