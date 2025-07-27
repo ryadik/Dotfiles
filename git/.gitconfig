@@ -1,8 +1,11 @@
 [user]
 	name = ryadik
 	email = 15162342h@gmail.com
-[includeIf "gitdir:~/corp/"]
-    path = ~/.dotfiles/git/.corp.gitconfig
+[includeIf "gitdir:/Users/ryadik/corp/**"]
+  path = /Users/ryadik/.dotfiles/git/.corp.gitconfig
+[user]
+	name = ryadik
+	email = 15162342h@gmail.com
 [core]
   quotepath = false
   excludesfile = ~/.gitignore_global
