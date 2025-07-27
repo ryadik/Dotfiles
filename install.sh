@@ -60,12 +60,6 @@ fi
 log_info "Installing/updating Homebrew dependencies from Brewfile..."
 
 if command_exists brew; then
-  # Ensure Homebrew Bundle is installed
-  if ! brew tap | grep -q "homebrew/bundle"; then
-    log_info "Tapping homebrew/bundle..."
-
-    brew tap homebrew/bundle || log_error "Failed to tap homebrew/bundle."
-  fi
   brew bundle install --file="$DOTFILES_DIR/Brewfile" || log_error "Failed to install Homebrew dependencies."
 
   log_success "Homebrew dependencies installed/updated."
@@ -150,36 +144,46 @@ if command_exists asdf && [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
   PYTHON_VERSION="latest:3.11"
   NODEJS_VERSION="lts"
 
-  asdf install python "$PYTHON_VERSION" || log_warn "Failed to install Python $PYTHON_VERSION via asdf. Please install manually if needed."
-  asdf global python "$PYTHON_VERSION" || log_warn "Failed to set global Python to $PYTHON_VERSION. Please set manually if needed."
+  # Install specific versions
+  asdf install python "$PYTHON_VERSION" || log_error "Failed to install Python $PYTHON_VERSION via asdf."
+  asdf install nodejs "$NODEJS_VERSION" || log_error "Failed to install Node.js $NODEJS_VERSION via asdf."
 
-  asdf install nodejs "$NODEJS_VERSION" || log_warn "Failed to install Node.js $NODEJS_VERSION via asdf. Please install manually if needed."
-  asdf global nodejs "$NODEJS_VERSION" || log_warn "Failed to set global Node.js to $NODEJS_VERSION. Please set manually if needed."
+  # Set global versions using 'asdf set' (correct for ASDF 0.18.0)
+  # IMPORTANT: cd to HOME to ensure 'asdf set' writes to ~/.tool-versions
+  log_info "Setting global Python and Node.js versions..."
+  (cd "$HOME" && asdf set python "$PYTHON_VERSION" || log_error "Failed to set global Python to $PYTHON_VERSION.")
+  (cd "$HOME" && asdf set nodejs "$NODEJS_VERSION" || log_error "Failed to set global Node.js to $NODEJS_VERSION.")
 
   log_success "Python and Node.js versions set via ASDF."
 
+  # Re-hash shims to ensure they are available immediately
+  log_info "Re-hashing ASDF shims..."
+  asdf reshim || log_warn "ASDF reshim failed. This might affect command availability."
+  log_success "ASDF shims re-hashed."
+
   # --- NPM Global Packages ---
-  if command_exists npm; then
+  # Use 'asdf exec npm' to ensure the correct Node.js/npm version is used
+  if command_exists npm; then # Check if 'npm' shim is available
     log_info "Installing global NPM packages..."
-
-    npm install -g npm-check-updates || log_warn "Failed to install npm-check-updates globally."
-
+    # REMOVED SUDO: asdf manages permissions for installed versions
+    asdf exec npm install -g npm-check-updates || log_warn "Failed to install npm-check-updates globally. Ensure Node.js is set via ASDF."
     log_success "Global NPM packages installed."
   else
-    log_warn "NPM not found. Skipping global NPM packages installation."
+    log_warn "NPM command not found (via ASDF shim). Skipping global NPM packages installation."
   fi
 
 else
   log_warn "ASDF not found or not initialized for this script. Skipping ASDF language installations."
 fi
 
-if command_exists python && command_exists pip; then
+# Install pynvim for Neovim (requires an active Python version via asdf)
+if command_exists python && command_exists pip; then # Check if 'python' and 'pip' shims are available
   log_info "Installing pynvim for Neovim..."
-  # Use python -m pip for clarity and to ensure the correct pip is used
-  python -m pip install --user --upgrade pynvim || log_warn "Failed to install pynvim. Please check Python/pip setup."
+  # Use 'asdf exec python' to ensure the correct Python/pip version is used
+  asdf exec python -m pip install --user --upgrade pynvim || log_warn "Failed to install pynvim. Ensure Python is set via ASDF and pip is available."
   log_success "pynvim installed."
 else
-  log_warn "Python or pip not found. Skipping pynvim installation. Ensure an ASDF Python version is globally set or system Python is available."
+  log_warn "Python or pip commands not found (via ASDF shim). Skipping pynvim installation. Ensure an ASDF Python version is globally set."
 fi
 
 # ------------------------------------ Final -------------------------------------
