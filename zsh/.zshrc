@@ -21,8 +21,8 @@ antigen use oh-my-zsh
 antigen theme robbyrussell
 
 antigen bundles <<EOBUNDLES
-  bundler
   git
+  bundler
   rails
   zsh-completions
   command-not-found
