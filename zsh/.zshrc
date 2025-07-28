@@ -84,6 +84,10 @@ alias grp="git remote prune origin"
 alias grhh="git reset HEAD --hard"
 alias gsh="git stash"
 alias gshp="git stash pop"
+alias gconf="git config"
+alias gconfL="git config --local"
+alias g-set-local-corp-cred="gconf user.name \"i.ryadinsky\" && gconf user.email \"i.ryadinsky@irkpk.ru\""
+alias g-set-local-pers-cred="gconf user.name \"ryadik\" && gconf user.email \"15162342h@gmail.com\""
 
 # --- Node & NPM Aliases ---
 alias nrs="npm run start"
