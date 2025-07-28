@@ -86,8 +86,8 @@ alias gsh="git stash"
 alias gshp="git stash pop"
 alias gconf="git config"
 alias gconfL="git config --local"
-alias g-set-local-corp-cred="gconf user.name \"i.ryadinsky\" && gconf user.email \"i.ryadinsky@irkpk.ru\""
-alias g-set-local-pers-cred="gconf user.name \"ryadik\" && gconf user.email \"15162342h@gmail.com\""
+alias g-set-local-corp-cred="gconfL user.name \"i.ryadinsky\" && gconfL user.email \"i.ryadinsky@irkpk.ru\""
+alias g-set-local-pers-cred="gconfL user.name \"ryadik\" && gconfL user.email \"15162342h@gmail.com\""
 
 # --- Node & NPM Aliases ---
 alias nrs="npm run start"
@@ -135,6 +135,7 @@ alias pip="pip3"
 COMPLETION_WAITING_DOTS="true"
 DEFAULT_USER="ryadik"
 BAT_THEME="Visual Studio Dark+"
+ENABLE_CORRECTION="true"
 
 # --- Language Version Managers (Post-Antigen/Core setup) ---
 eval "$(pyenv init -)"
