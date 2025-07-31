@@ -41,6 +41,7 @@ brew "zsh"
 
 # Homebrew Casks
 # cask "bartender-5" use the crack vers.
+cask "appcleaner"
 cask "betterdisplay"
 cask "command-x"
 cask "discord"
