@@ -49,6 +49,7 @@ cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "insomnia"
+cask "jordanbaird-ice"
 cask "kitty"
 cask "linearmouse"
 cask "obs"
@@ -69,6 +70,7 @@ cask "webstorm"
 mas "Unzip - RAR ZIP 7Z Unarchiver", id: 1537056818
 # mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
+mas "WPS Office", id: 1468073139
 
 # MacOS settings
 
