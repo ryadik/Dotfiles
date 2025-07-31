@@ -111,6 +111,7 @@ alias cat_p="bat"
 # --- Utility Aliases ---
 alias port="lsof -i"
 alias kp="npx kill-port"
+alias clear-dns-cache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias lg="lazygit"
 alias clear_modules="rm -rf ./node_modules ; rm ./package-lock.json"
 alias code="code ./"
