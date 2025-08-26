@@ -121,7 +121,7 @@ fi
 # --- 6. Stow dotfiles ---
 log_info "Stowing dotfiles..."
 
-stow --restow --target="$HOME" git kitty lazygit neovim ruby tmux zsh || log_error "Failed to stow dotfiles."
+stow --restow --target="$HOME" gemini git kitty lazygit neovim ruby tmux vscode zsh || log_error "Failed to stow dotfiles."
 
 log_success "Dotfiles stowed successfully."
 
@@ -133,28 +133,32 @@ if command_exists asdf && [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
   source "$(brew --prefix asdf)/libexec/asdf.sh"
 
   log_info "ASDF initialized for this script session."
-  log_info "Adding ASDF plugins (python, nodejs)..."
+  log_info "Adding ASDF plugins (python, nodejs, golang)..."
 
   asdf plugin add python || log_warn "Python plugin for asdf might already be added or failed. Skipping."
   asdf plugin add nodejs || log_warn "Node.js plugin for asdf might already be added or failed. Skipping."
+  asdf plugin add golang || log_warn "Go plugin for asdf might already be added or failed. Skipping."
 
   log_success "ASDF plugins added."
-  log_info "Installing and setting global Python and Node.js versions via ASDF..."
+  log_info "Installing and setting global Python, Node.js, and Go versions via ASDF..."
 
   PYTHON_VERSION="latest:3.11"
   NODEJS_VERSION="lts"
+  GOLANG_VERSION="latest"
 
   # Install specific versions
   asdf install python "$PYTHON_VERSION" || log_error "Failed to install Python $PYTHON_VERSION via asdf."
   asdf install nodejs "$NODEJS_VERSION" || log_error "Failed to install Node.js $NODEJS_VERSION via asdf."
+  asdf install golang "$GOLANG_VERSION" || log_error "Failed to install Go $GOLANG_VERSION via asdf."
 
   # Set global versions using 'asdf set' (correct for ASDF 0.18.0)
   # IMPORTANT: cd to HOME to ensure 'asdf set' writes to ~/.tool-versions
-  log_info "Setting global Python and Node.js versions..."
+  log_info "Setting global Python, Node.js, and Go versions..."
   (cd "$HOME" && asdf set python "$PYTHON_VERSION" || log_error "Failed to set global Python to $PYTHON_VERSION.")
   (cd "$HOME" && asdf set nodejs "$NODEJS_VERSION" || log_error "Failed to set global Node.js to $NODEJS_VERSION.")
+  (cd "$HOME" && asdf set golang "$GOLANG_VERSION" || log_error "Failed to set global Go to $GOLANG_VERSION.")
 
-  log_success "Python and Node.js versions set via ASDF."
+  log_success "Python, Node.js, and Go versions set via ASDF."
 
   # Re-hash shims to ensure they are available immediately
   log_info "Re-hashing ASDF shims..."
