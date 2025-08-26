@@ -15,6 +15,8 @@ eval "$(scmpuff init -s)"
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+# --- Add GOPATH to PATH ---
+export PATH=$PATH:$(go env GOBIN)
 
 # --- Antigen Plugin Configuration ---
 antigen use oh-my-zsh
@@ -116,6 +118,8 @@ alias lg="lazygit"
 alias clear_modules="rm -rf ./node_modules ; rm ./package-lock.json"
 alias code="code ./"
 alias ws="webstorm"
+alias gmn="gemini --checkpointing"
+alias ask="gemini -p"
 
 # --- Brew Aliases ---
 alias hbup="brew update"
