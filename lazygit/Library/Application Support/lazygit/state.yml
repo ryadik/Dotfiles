@@ -1,0 +1,16 @@
+lastupdatecheck: 0
+recentrepos:
+    - /Users/ryadik/.dotfiles
+    - /Users/ryadik/corp/sed
+    - /Users/ryadik/corp/portalgkh-front
+startuppopupversion: 5
+lastversion: 0.53.0
+customcommandshistory: []
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+renamesimilaritythreshold: 20
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
