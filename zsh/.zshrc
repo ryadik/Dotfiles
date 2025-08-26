@@ -129,7 +129,8 @@ alias hbi="brew install"
 alias hbui="brew uninstall"
 
 # --- Bundle Aliases ---
-alias dfu="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile && git -C $HOME/.dotfiles/ add . && git -C $HOME/.dotfiles/ commit -m 'feat(bundle): SYSTEM update Brewfile via brew bundle dump'"
+alias dfu="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile_new"
+alias dfuc="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile && git -C $HOME/.dotfiles/ add . && git -C $HOME/.dotfiles/ commit -m 'feat(bundle): SYSTEM update Brewfile via brew bundle dump'"
 alias dfs="stow --restow --target=$HOME git kitty lazygit neovim ruby tmux zsh"
 
 # --- Python Aliases ---
