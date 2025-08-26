@@ -1,0 +1,188 @@
+
+{
+  // =================================================================
+  // I. BASIC
+  // =================================================================
+  "window.title": " ",
+  "window.titleBarStyle": "custom",
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "bottom",
+  "workbench.secondarySideBar.showLabels": false, // was true
+  "workbench.editor.wrapTabs": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.largeFileOptimizations": false,
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelScrollSensitivity": 1,
+
+  "files.autoSave": "onFocusChange",
+  "workbench.startupEditor": "newUntitledFile",
+  "emmet.triggerExpansionOnTab": true,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+  "terminal.integrated.tabs.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.lineHeight": 1.2,
+  "explorer.confirmDelete": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.confirmSync": false,
+
+  "editor.rulers": [80, 120],
+  "terminal.external.osxExec": "kitty.app",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.smoothScrolling": true,
+  "chat.mcp.discovery.enabled": true,
+  "chat.mcp.autostart": "newAndOutdated",
+
+  // =================================================================
+  // I. ВИЗУАЛЬНЫЙ СТИЛЬ И ШРИФТЫ (Эстетика WebStorm)
+  // =================================================================
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "workbench.productIconTheme": "fluent-icons",
+  "editor.fontLigatures": false,
+  "editor.lineHeight": 1.7,
+  "editor.fontSize": 12,
+  "vscode_custom_css.imports": [
+    "file:///Users/ryadik/.vscode/style.css",
+    "file:///Users/ryadik/.vscode/script.js"
+  ],
+
+  // =================================================================
+  // II. МИНИМАЛИЗМ И ЭРГОНОМИКА ИНТЕРФЕЙСА
+  // =================================================================
+  "editor.minimap.enabled": false, // Отключаем миникарту кода
+  "workbench.statusBar.visible": true, // Статус-бар полезен, оставляем
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.iconClickBehavior": "focus",
+  "breadcrumbs.enabled": true, // "Хлебные крошки" для навигации, как в WebStorm
+  "gitlens.currentLine.enabled": false,
+
+  // =================================================================
+  // III. НАСТРОЙКА ПРОВОДНИКА (EXPLORER)
+  // =================================================================
+  "explorer.compactFolders": false, // Делает папки менее сжатыми, больше похоже на WebStorm
+  "explorer.openEditors.visible": 1, // Полностью убираем секцию "Open Editors"
+  "explorer.autoReveal": true, // Автоматически раскрывать текущий файл в дереве
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
+
+  // =================================================================
+  // IV. НАСТРОЙКА РЕДАКТОРА И ФОРМАТИРОВАНИЯ
+  // =================================================================
+  "editor.bracketPairColorization.enabled": true,
+  "editor.renderLineHighlight": "all", // Подсветка активной строки только у номера
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.editor.labelFormat": "default", // Короткие имена файлов во вкладках
+  "editor.mouseWheelZoom": true, // Увеличение/уменьшение кода колесиком мыши + Ctrl
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // Enter принимает подсказку в режиме INSERT (не затирая хвост)
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.suggest.insertMode": "insert",
+  "editor.tabCompletion": "off", // Чтобы Tab не перехватывался встроенной таб-комплитой
+  // Не обязательно, но удобно
+  "editor.suggestSelection": "first",
+  "editor.snippetSuggestions": "inline",
+
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "prettier.trailingComma": "all",
+  "prettier.tabWidth": 4,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.bracketSpacing": true,
+  "prettier.printWidth": 80,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": "always",
+  //   "source.organizeImports": "always"
+  // },
+  
+  "explorer.sortOrder": "type",
+  "editor.codeLensFontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.inlayHints.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.inlineSuggest.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "debug.console.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "scm.inputFontFamily": "JetBrainsMono Nerd Font Mono",
+  "notebook.output.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "chat.editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "markdown.preview.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "inlineChat.lineNaturalLanguageHint": false,
+
+    "workbench.colorCustomizations": {
+        "[Tokyo Night]": {
+            "statusBar.background": "#000001",
+            "statusBar.border": "#000001",
+            "menu.selectionBackground": "#000001", // type:background
+            "menu.selectionBorder": "#000001", // type:background
+            "editorActionList.focusBackground": "#000001", // type:background
+            "peekViewResult.selectionBackground": "#000001", // type:background
+            "quickInputList.focusBackground": "#000001", // type:background
+            "list.activeSelectionBackground": "#000001", // type:background
+            "list.focusBackground": "#000001", // type:background
+            "list.focusOutline": "#00000100", // type:background
+            "list.focusAndSelectionOutline": "#00000100", // type:background
+            "list.hoverBackground": "#000001", // type:background
+            "list.inactiveSelectionBackground": "#000001", // type:background
+            "list.inactiveFocusBackground": "#000001", // type:background
+            "list.inactiveFocusOutline": "#00000100", // type:background
+            "editorSuggestWidget.selectedBackground": "#000001", // type:background
+            "titleBar.activeBackground": "#000001",
+            "titleBar.inactiveBackground": "#000001",
+            "titleBar.border": "#000001",
+            "statusBar.focusBorder": "#000001",
+            "statusBar.debuggingBackground": "#000001",
+            "statusBar.noFolderBackground": "#000001",
+            "statusBarItem.remoteBackground": "#000001",
+        }
+    },
+
+  // =================================================================
+  // IV. JSDOC HIGHLIGHTING
+  // =================================================================
+
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night]": { // or "[Tokyo Night Storm]"
+        "textMateRules": [
+        {
+            "scope": [
+                "comment keyword.codetag.notation",
+                "comment.block.documentation keyword",
+                "comment.block.documentation storage.type.class"
+            ],
+            "settings": {
+                "foreground": "#bb9af7"
+            }
+        },
+        {
+            "scope": ["comment.block.documentation entity.name.type.instance"],
+            "settings": {
+                "foreground": "#73daca",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+            "comment.block.documentation entity.name.type punctuation.definition.bracket"
+            ],
+            "settings": {
+                "foreground": "#bb9af7"
+            }
+        },
+        {
+            "scope": ["comment.block.documentation variable"],
+            "settings": {
+                "foreground": "#e0af68",
+                "fontStyle": "italic"
+            }
+        }
+        ]
+    }
+  }
+}
