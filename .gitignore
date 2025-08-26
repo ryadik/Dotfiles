@@ -3,7 +3,16 @@ ssh/.ssh/id_rsa_thnukid
 ssh/.ssh/known_hosts
 ssh/.ssh/*.PEM
 neovim/.config/nvim/.netrwhist
+gemini/.gemini/history
+gemini/.gemini/tmp
+gemini/.gemini/.env
+gemini/.gemini/google_accounts.json
+gemini/.gemini/installation_id
+gemini/.gemini/oauth_creds.json
 
 .idea/
-.vscode/
+./.vscode/
+vscode/.vscode/extensions
+vscode/.vscode/cli
+vscode/.vscode/argv.json
 neovim/.config/nvim/
