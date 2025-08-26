@@ -1,0 +1,81 @@
+{
+  "selectedAuthType": "oauth-personal",
+  "hasSeenIdeIntegrationNudge": true,
+  "ideMode": true,
+  "checkpointing": {
+    "enabled": true
+  },
+  "excludedProjectEnvVars": [
+    "DEBUG",
+    "DEBUG_MODE",
+    "NODE_ENV",
+    "VITE"
+  ],
+  "showLineNumbers": false,
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    },
+    "package-registry": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "package-registry-mcp"
+      ]
+    }
+  },
+  "preferredEditor": "vscode",
+  "theme": "tokyonight",
+  "customThemes": {
+    "custom-google-theme": {
+      "name": "MyCustomTheme",
+      "type": "custom",
+      "Background": "#181818",
+      "Foreground": "#F8F8F2",
+      "LightBlue": "#82AAFF",
+      "AccentBlue": "#61AFEF",
+      "AccentPurple": "#C678DD",
+      "AccentCyan": "#56B6C2",
+      "AccentGreen": "#98C379",
+      "AccentYellow": "#E5C07B",
+      "AccentRed": "#E06C75",
+      "Comment": "#5C6370",
+      "Gray": "#ABB2BF",
+      "DiffAdded": "#A6E3A1",
+      "DiffRemoved": "#F38BA8",
+      "DiffModified": "#89B4FA",
+      "GradientColors": [
+        "#4796E4",
+        "#847ACE",
+        "#C3677F"
+      ]
+    },
+    "tokyonight": {
+      "name": "tokyonight",
+      "type": "custom",
+      "Background": "#1a1b26",
+      "Foreground": "#a9b1d6",
+      "LightBlue": "#7dcfff",
+      "AccentBlue": "#7aa2f7",
+      "AccentPurple": "#bb9af7",
+      "AccentCyan": "#7dcfff",
+      "AccentGreen": "#73daca",
+      "AccentYellow": "#e0af68",
+      "AccentRed": "#f7768e",
+      "DiffAdded": "#283B4D",
+      "DiffRemoved": "#3C2C3C",
+      "Comment": "#565f89",
+      "Gray": "#9aa5ce",
+      "GradientColors": [
+        "#7aa2f7",
+        "#bb9af7"
+      ]
+    }
+  },
+  "hideBanner": true,
+  "showMemoryUsage": true
+}
