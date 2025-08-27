@@ -30,6 +30,8 @@ These dotfiles configure and manage the following key components:
 *   **ASDF**: Used for managing Python and Node.js versions.
 *   **Git**: Personal and work rules are configured.
 *   **LazyGit**: GUI for Git in the terminal.
+*   **VSCode**: All my using VSC Ext, settings and customizations.
+*   **Gemini-CLI**: Configs for Gemini-cli.
 *   **macOS Defaults**: Automated macOS settings for Finder, Dock. (Experimental)
 *   **Stow**: For symlinking all configs from the repository to the correct locations in the home directory.
 
@@ -118,6 +120,11 @@ More details can be found in the configs themselves. Aliases are located in `.do
 │   └── fonts                     # Fonts (for manual installation)
 │       └── ...
 │
+├── gemini                        # Gemini-CLI configuration
+│   └── .gemini
+│       ├── .env.example
+│       └── settings.json
+│ 
 ├── git                           # Git configuration
 │   ├── .corp.gitconfig
 │   ├── .gitconfig
@@ -149,6 +156,17 @@ More details can be found in the configs themselves. Aliases are located in `.do
 │   ├── .tmux.conf
 │   └── tmux_ws.sh
 │
+├── vscode                        # VSCode configuration
+│   └── .vscode
+│       ├── themes
+│       │   ├── rounded
+│       │   │   ├── script.js
+│       │   │   └── style.css
+│       │   └── untitled
+│       │       ├── script.js
+│       │       └── style.css
+│       └── settings.json
+│ 
 ├── zsh                           # Zsh configuration
 │   ├── .zshenv
 │   └── .zshrc

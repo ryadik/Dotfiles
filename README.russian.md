@@ -27,6 +27,8 @@
 *   **ASDF**: Используется для управления python и nodejs версиями
 *   **Git**: Настроены личные и рабочие правила
 *   **LazyGit**: GUI для git в терминале
+*   **VSCode**: Все используемые расширения, настройки и кастомизация.
+*   **Gemini-CLI**: Настройки для Gemini-cli.
 *   **macOS Defaults**: Автоматизированные настройки macOS для Finder, Dock. (Experimental)
 *   **Stow**: Для симлинков всех конфигов из репозитория в нужные места в домашнем каталоге
 
@@ -109,6 +111,11 @@ $HOME/.dotfiles/install.sh
 │   └── fonts                     # Шрифты (для ручной установки)
 │       └── ...
 │
+├── gemini                        # Конфигурация Gemini-CLI
+│   └── .gemini
+│       ├── .env.example
+│       └── settings.json
+│ 
 ├── git                           # Конфигурация Git
 │   ├── .corp.gitconfig
 │   ├── .gitconfig
@@ -140,6 +147,17 @@ $HOME/.dotfiles/install.sh
 │   ├── .tmux.conf
 │   └── tmux_ws.sh
 │
+├── vscode                        # Конфигурация VSCode
+│   └── .vscode
+│       ├── themes
+│       │   ├── rounded
+│       │   │   ├── script.js
+│       │   │   └── style.css
+│       │   └── untitled
+│       │       ├── script.js
+│       │       └── style.css
+│       └── settings.json
+│ 
 ├── zsh                           # Конфигурация Zsh
 │   ├── .zshenv
 │   └── .zshrc
