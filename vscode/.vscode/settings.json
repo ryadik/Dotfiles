@@ -1,4 +1,3 @@
-
 {
   // =================================================================
   // I. BASIC
@@ -21,7 +20,7 @@
   "explorer.confirmDragAndDrop": false,
   "workbench.preferredDarkColorTheme": "Visual Studio Dark",
   "terminal.integrated.tabs.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.lineHeight": 1.2,
   "explorer.confirmDelete": false,
@@ -42,7 +41,7 @@
   // =================================================================
   // I. ВИЗУАЛЬНЫЙ СТИЛЬ И ШРИФТЫ (Эстетика WebStorm)
   // =================================================================
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Darcula",
   "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "workbench.productIconTheme": "fluent-icons",
@@ -140,7 +139,60 @@
             "statusBar.debuggingBackground": "#000001",
             "statusBar.noFolderBackground": "#000001",
             "statusBarItem.remoteBackground": "#000001",
-        }
+        },
+        "[Darcula]": {
+            // "statusBar.background": "#1E2125",
+            // "statusBar.border": "#1E2125",
+            // "menu.selectionBackground": "#1E2125", // type:background
+            // "menu.selectionBorder": "#1E2125", // type:background
+            // "editorActionList.focusBackground": "#1E2125", // type:background
+            // "peekViewResult.selectionBackground": "#1E2125", // type:background
+            // "quickInputList.focusBackground": "#1E2125", // type:background
+            // "list.activeSelectionBackground": "#1E2125", // type:background
+            // "list.focusBackground": "#1E2125", // type:background
+            // "list.focusOutline": "#1E212500", // type:background
+            // "list.focusAndSelectionOutline": "#1E212500", // type:background
+            // "list.hoverBackground": "#1E2125", // type:background
+            // "list.inactiveSelectionBackground": "#1E2125", // type:background
+            // "list.inactiveFocusBackground": "#1E2125", // type:background
+            // "list.inactiveFocusOutline": "#1E212500", // type:background
+            // "editorSuggestWidget.selectedBackground": "#1E2125", // type:background
+            // "titleBar.activeBackground": "#1E2125",
+            // "titleBar.inactiveBackground": "#1E2125",
+            // "titleBar.border": "#1E2125",
+            // "statusBar.focusBorder": "#1E2125",
+            // "statusBar.debuggingBackground": "#1E2125",
+            // "statusBar.noFolderBackground": "#1E2125",
+            // "statusBarItem.remoteBackground": "#1E2125",
+
+            "statusBar.background": "#000001",
+            "statusBar.border": "#000001",
+            "menu.selectionBackground": "#000001", // type:background
+            "menu.selectionBorder": "#000001", // type:background
+            "editorActionList.focusBackground": "#000001", // type:background
+            "peekViewResult.selectionBackground": "#000001", // type:background
+            "quickInputList.focusBackground": "#000001", // type:background
+            "list.activeSelectionBackground": "#000001", // type:background
+            "list.focusBackground": "#000001", // type:background
+            "list.focusOutline": "#00000100", // type:background
+            "list.focusAndSelectionOutline": "#00000100", // type:background
+            "list.hoverBackground": "#000001", // type:background
+            "list.inactiveSelectionBackground": "#000001", // type:background
+            "list.inactiveFocusBackground": "#000001", // type:background
+            "list.inactiveFocusOutline": "#00000100", // type:background
+            "editorSuggestWidget.selectedBackground": "#000001", // type:background
+            "titleBar.activeBackground": "#000001",
+            "titleBar.inactiveBackground": "#000001",
+            "titleBar.border": "#000001",
+            "sideBar.border": "#000001",
+            "statusBar.focusBorder": "#000001",
+            "statusBar.debuggingBackground": "#000001",
+            "statusBar.noFolderBackground": "#000001",
+            "statusBarItem.remoteBackground": "#000001",
+
+            "sideBar.background": "#2C2D30",
+            "editor.background": "#1E1F22",
+        },
     },
 
   // =================================================================
@@ -184,5 +236,6 @@
         }
         ]
     }
-  }
+},
+"diffEditor.renderSideBySide": true
 }
