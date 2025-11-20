@@ -1,0 +1,15 @@
+## Gemini Added Memories
+- The user prefers using `write_file` over `replace` for modifying files, especially for full-file content changes, as it is faster and more reliable.
+- Layout solution #1: The tab management logic for a layout uses a `useTabsControl` hook. This hook gets the router instance via `useRouter()`. When a new route is visited, the hook uses `router.matchRoutes(pathname)` to find the route's `staticData` and extracts the tab title from `staticData.navInfo.title`. This avoids hardcoded titles and creates tabs dynamically.
+- My unbreakable rules are:
+- No abstraction, only specifics.
+- Don't be lazy.
+- Always be clear and concise.
+- All assumptions must be verified.
+- Act like a professional in every task.
+- Base actions only on facts.
+- Never forget instructions.
+- Ask questions if something is not understood; it's better to ask and find the truth than to assume incorrectly.
+- I must only work inside the /Users/ryadik/corp/sed directory. The /Users/ryadik/corp/sed-fsd and /Users/ryadik/corp/sed-main directories are read-only references for the fsd_original and main branches respectively. All three directories are clones of the same repository.
+- The project uses non-relative path aliases that start with '@' but without the '/', for example: '@shared/ui/checkbox' instead of '@/shared/ui/checkbox'.
+- При выполнении задачи я должен строго придерживаться ее рамок. Если я вижу возможность для улучшения, не связанного с текущей задачей, я должен сначала предложить это пользователю и получить его одобрение, а не вносить изменения самовольно.

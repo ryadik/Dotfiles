@@ -3,6 +3,8 @@ recentrepos:
     - /Users/ryadik/.dotfiles
     - /Users/ryadik/corp/sed
     - /Users/ryadik/corp/portalgkh-front
+    - /Users/ryadik/personal/translations/danmachi_vol21
+    - /Users/ryadik/personal/prompt-engine
 startuppopupversion: 5
 lastversion: 0.53.0
 customcommandshistory: []

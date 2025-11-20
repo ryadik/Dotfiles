@@ -9,7 +9,6 @@
 [core]
   quotepath = false
   excludesfile = ~/.gitignore_global
-  editor = /usr/local/bin/nvim
 [color]
   ui = true
   branch = auto
