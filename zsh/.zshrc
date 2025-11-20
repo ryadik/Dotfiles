@@ -118,8 +118,8 @@ alias lg="lazygit"
 alias clear_modules="rm -rf ./node_modules ; rm ./package-lock.json"
 alias code="code ./"
 alias ws="webstorm"
-alias gmn="gemini --checkpointing"
-alias ask="gemini -p"
+alias gmn="gemini --model gemini-2.5-pro"
+alias gmnf="gemini --model gemini-2.5-flash"
 
 # --- Brew Aliases ---
 alias hbup="brew update"
