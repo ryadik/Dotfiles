@@ -1,9 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
     - /Users/ryadik/.dotfiles
-    - /Users/ryadik/corp/sed
+    - /Users/ryadik/corp/ac-mind
     - /Users/ryadik/corp/portalgkh-front
+    - /Users/ryadik/corp/site-frontend
+    - /Users/ryadik/corp/site-backend
+    - /Users/ryadik/personal/translations/danmachi_vol21_translator_only
     - /Users/ryadik/personal/translations/danmachi_vol21
+    - /Users/ryadik/corp/sed
     - /Users/ryadik/personal/prompt-engine
 startuppopupversion: 5
 lastversion: 0.53.0

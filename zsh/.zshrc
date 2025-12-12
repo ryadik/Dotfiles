@@ -128,6 +128,9 @@ alias hbs="brew search"
 alias hbi="brew install"
 alias hbui="brew uninstall"
 
+alias nginx-start="brew services nginx start"
+alias nginx-stop="brew services nginx stop"
+
 # --- Bundle Aliases ---
 alias dfu="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile_new"
 alias dfuc="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile && git -C $HOME/.dotfiles/ add . && git -C $HOME/.dotfiles/ commit -m 'feat(bundle): SYSTEM update Brewfile via brew bundle dump'"
@@ -146,3 +149,6 @@ ENABLE_CORRECTION="true"
 # --- Language Version Managers (Post-Antigen/Core setup) ---
 eval "$(pyenv init -)"
 
+
+# Added by Antigravity
+export PATH="/Users/ryadik/.antigravity/antigravity/bin:$PATH"

@@ -1,0 +1,12 @@
+{
+  "code-review": {
+    "overrides": [
+      "/Users/ryadik/*"
+    ]
+  },
+  "gemini-cli-prompt-library": {
+    "overrides": [
+      "/Users/ryadik/*"
+    ]
+  }
+}

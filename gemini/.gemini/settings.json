@@ -4,7 +4,8 @@
       "enabled": true
     },
     "disableAutoUpdate": true,
-    "preferredEditor": "vscode"
+    "preferredEditor": "vscode",
+    "previewFeatures": true
   },
   "ui": {
     "customThemes": {
@@ -61,7 +62,10 @@
     "showMemoryUsage": true,
     "showLineNumbers": false,
     "theme": "tokyonight",
-    "showStatusInTitle": true
+    "showStatusInTitle": true,
+    "accessibility": {
+      "screenReader": false
+    }
   },
   "advanced": {
     "excludedEnvVars": [
@@ -90,6 +94,13 @@
       "args": [
         "-y",
         "package-registry-mcp"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
       ]
     }
   },
