@@ -26,10 +26,12 @@ antigen bundles <<EOBUNDLES
   git
   bundler
   rails
+  marlonrichert/zsh-autocomplete
   zsh-completions
   command-not-found
   zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
   hlissner/zsh-autopair
 EOBUNDLES
 
@@ -65,7 +67,8 @@ alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gpom="git push origin master"
 alias gpo="git push origin"
-alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(green)%ar%C(reset) %C(bold blue)%an%C(reset) %C(red)%d%C(reset) %s" --graph --abbrev-commit --decorate'
+# alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(green)%ar%C(reset) %C(bold blue)%an%C(reset) %C(red)%d%C(reset) %s" --graph --abbrev-commit --decorate'
+alias glog="serie"
 alias gd="git diff"
 alias gap="git add -p"
 alias gaa="git add ."
@@ -116,10 +119,14 @@ alias kp="npx kill-port"
 alias clear-dns-cache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias lg="lazygit"
 alias clear_modules="rm -rf ./node_modules ; rm ./package-lock.json"
-alias code="code ./"
+alias code="code ./'"
 alias ws="webstorm"
 alias gmn="gemini --model gemini-2.5-pro"
 alias gmnf="gemini --model gemini-2.5-flash"
+alias ask="gemini --model gemini-2.5-pro -p"
+alias regex="regex-tui"
+alias search="fzf"
+alias monitor="btm"
 
 # --- Brew Aliases ---
 alias hbup="brew update"
@@ -149,6 +156,44 @@ ENABLE_CORRECTION="true"
 # --- Language Version Managers (Post-Antigen/Core setup) ---
 eval "$(pyenv init -)"
 
+# ZSH reload
+function reload() {
+  echo "zsh reloading..."
+  exec zsh
+}
 
 # Added by Antigravity
 export PATH="/Users/ryadik/.antigravity/antigravity/bin:$PATH"
+
+# FZF ENHANCEMENTS (v11 - Border Theme)
+f() {
+  local selected
+  selected=$(fd --type f --type d --hidden --follow --exclude ".git" . | fzf --height 100% --layout=default --border=rounded --marker='✓' --pointer='►' \
+    --color='fg:#c0caf5,bg:#1a1b26,hl:#bb9af7,fg+:#c0caf5,bg+:#292e42,hl+:#bb9af7,info:#7dcfff,prompt:#7dcfff,pointer:#7dcfff,marker:#bb9af7,preview-bg:#1f2335,border:#7dcfff' \
+    --preview-window='right,55%,border-rounded' \
+    --preview 'if [ -d {} ]; then eza -l --tree --git --git-ignore --color=always --icons=always --level=3 {}; else bat --style=numbers,changes --color=always --line-range :500 {}; fi' \
+    --bind "ctrl-c:execute(echo {} | pbcopy)+abort" \
+    --header "ENTER: Open | CTRL-C: Copy Path | Scroll Preview: Shift+Up/Down")
+
+  if [ -n "$selected" ]; then
+    nvim $(echo "$selected" | tr '\n' ' ')
+  fi
+}
+
+fr() {
+  local selected
+  selected=$(fzf --height 100% --layout=default --border=rounded --marker='✓' --pointer='►' --ansi \
+    --color='fg:#c0caf5,bg:#1a1b26,hl:#bb9af7,fg+:#c0caf5,bg+:#292e42,hl+:#bb9af7,info:#7dcfff,prompt:#7dcfff,pointer:#7dcfff,marker:#bb9af7,preview-bg:#1f2335,border:#7dcfff' \
+    --preview-window='right,55%,border-rounded,+{2}-10' \
+    --header "Live content search. Start typing..." \
+    --prompt '> ' \
+    --delimiter ':' \
+    --preview 'bat --style=numbers,changes --color=always --highlight-line {2} {1}' \
+    --bind "change:reload:rg --hidden --column --line-number --no-heading --color=always --smart-case {q} . || true")
+
+  if [ -n "$selected" ]; then
+    local file=$(echo "$selected" | cut -d: -f1)
+    local line=$(echo "$selected" | cut -d: -f2)
+    nvim "+$line" "$file"
+  fi
+}
