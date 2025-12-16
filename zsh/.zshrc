@@ -125,8 +125,8 @@ alias gmn="gemini --model gemini-2.5-pro"
 alias gmnf="gemini --model gemini-2.5-flash"
 alias ask="gemini --model gemini-2.5-pro -p"
 alias regex="regex-tui"
-alias search="fzf"
-alias monitor="btm"
+alias finder="spf"
+alias mntr="btm"
 
 # --- Brew Aliases ---
 alias hbup="brew update"
@@ -135,8 +135,8 @@ alias hbs="brew search"
 alias hbi="brew install"
 alias hbui="brew uninstall"
 
-alias nginx-start="brew services nginx start"
-alias nginx-stop="brew services nginx stop"
+alias nginx_start="brew services start nginx"
+alias nginx_stop="brew services stop nginx"
 
 # --- Bundle Aliases ---
 alias dfu="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile_new"
