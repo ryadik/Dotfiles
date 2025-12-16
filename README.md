@@ -50,7 +50,7 @@ The installation process is designed for a **new or relatively clean macOS syste
 In the standard macOS terminal (`Terminal.app`), execute the following command.
 
 ```bash
-curl -L "https://github.com/ryadik/dotfiles/archive/refs/heads/main.zip" -o "/tmp/dotfiles_temp.zip" && unzip -q "/tmp/dotfiles_temp.zip" -d "/tmp/" && mv "/tmp/dotfiles-main" "$HOME/.dotfiles" && rm "/tmp/dotfiles_temp.zip" && chmod +x "$HOME/.dotfiles/install.sh" && "$HOME/.dotfiles/install.sh"
+curl -L "https://github.com/ryadik/Dotfiles/archive/refs/heads/master.zip" -o "/tmp/dotfiles_temp.zip" && unzip -q "/tmp/dotfiles_temp.zip" -d "/tmp/" && mv "/tmp/Dotfiles-master" "$HOME/.dotfiles" && rm "/tmp/dotfiles_temp.zip" && chmod +x "$HOME/.dotfiles/install.sh" && "$HOME/.dotfiles/install.sh"
 ```
 
 This command will download the `Dotfiles` repository, extract it to `~/.dotfiles`, and then run the main `install.sh` script.
