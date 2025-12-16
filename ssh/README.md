@@ -20,6 +20,17 @@ Test ssh connection
 ssh -T git@domain.com
 ```
 
+Add keys to ssh-agent
+
+```bash
+ssh-add id_ed25519_domain
+```
+
+Generate public keys if you needed
+```bash
+ssk-keygen -t ed25519 -C "email"
+```
+
 For create backup
 ```bash
 zip -e ssh_keys_backup.zip file file 
