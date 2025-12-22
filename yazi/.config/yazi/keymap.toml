@@ -1,0 +1,9 @@
+# keymap.toml
+[mgr]
+prepend_keymap = [
+	# ...
+  { on=["g", "."], run="cd ~/.dotfiles", desc="Go to .dotfiles/ folder" },
+  { on=["g", "c"], run="cd ~/corp/", desc="Go to corp/ folder" },
+  { on=["g", "p"], run="cd ~/personal/", desc="Go to personal/ folder" },
+  { on="<C-p>", run='shell -- qlmanage -p "$@"', desc="Quick look for MacOS" }
+]

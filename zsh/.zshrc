@@ -125,7 +125,7 @@ alias gmn="gemini --model gemini-2.5-pro"
 alias gmnf="gemini --model gemini-2.5-flash"
 alias ask="gemini --model gemini-2.5-pro -p"
 alias regex="regex-tui"
-alias finder="spf"
+alias finder="yazi"
 alias mntr="btm"
 
 # --- Brew Aliases ---

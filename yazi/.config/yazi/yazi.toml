@@ -1,0 +1,10 @@
+[mgr]
+show_hidden = true
+linemode = "size_and_mtime"
+show_symlink = true
+show_git_status = true
+
+[preview]
+text_viewer = "bat"
+image_viewer = "kitty"
+json_viewer = "jq"
