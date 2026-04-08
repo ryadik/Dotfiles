@@ -118,6 +118,18 @@ else
   log_warn "$TMUX_SCRIPT not found. Skipping chmod."
 fi
 
+# --- 5.1. Make zsh-aliases script executable ---
+ZSH_ALIASES_SCRIPT="$DOTFILES_DIR/zsh/zsh-aliases"
+log_info "Making zsh-aliases executable..."
+
+if [ -f "$ZSH_ALIASES_SCRIPT" ]; then
+  chmod +x "$ZSH_ALIASES_SCRIPT" || log_error "Failed to make $ZSH_ALIASES_SCRIPT executable."
+
+  log_success "$ZSH_ALIASES_SCRIPT is now executable."
+else
+  log_warn "$ZSH_ALIASES_SCRIPT not found. Skipping chmod."
+fi
+
 # --- 6. Stow dotfiles ---
 log_info "Stowing dotfiles..."
 
