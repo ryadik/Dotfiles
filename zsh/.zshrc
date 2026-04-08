@@ -121,11 +121,12 @@ alias lg="lazygit"
 alias clear_modules="rm -rf ./node_modules ; rm ./package-lock.json"
 alias code="code ./'"
 alias ws="webstorm"
-alias gmn="gemini --model gemini-2.5-pro"
-alias gmnf="gemini --model gemini-2.5-flash"
-alias ask="gemini --model gemini-2.5-pro -p"
+alias gmn="gemini --model gemini-3.1-pro-preview"
+alias gmnf="gemini --model gemini-3-flash-preview"
+alias ask="gemini --model gemini-3-flash-preview -p"
 alias regex="regex-tui"
 alias finder="yazi"
+alias bktr="book-translator"
 alias mntr="btm"
 
 # --- Brew Aliases ---
@@ -197,3 +198,13 @@ fr() {
     nvim "+$line" "$file"
   fi
 }
+
+# Added by Antigravity
+export PATH="/Users/ryadik/.antigravity/antigravity/bin:$PATH"
+
+# bun completions
+[ -s "/Users/ryadik/.bun/_bun" ] && source "/Users/ryadik/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

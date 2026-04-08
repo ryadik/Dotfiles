@@ -12,3 +12,6 @@ export LC_ALL=en_US.UTF-8
 
 # clean up PATH for duplicates
 typeset -U PATH
+
+# other
+export ENABLE_LSP_TOOL=1
