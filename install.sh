@@ -121,7 +121,7 @@ fi
 # --- 6. Stow dotfiles ---
 log_info "Stowing dotfiles..."
 
-stow --restow --target="$HOME" gemini git kitty lazygit neovim ruby tmux vscode zsh || log_error "Failed to stow dotfiles."
+stow --restow --target="$HOME" gemini git glow kitty lazygit neovim opencode ruby tmux vscode yazi zsh || log_error "Failed to stow dotfiles."
 
 log_success "Dotfiles stowed successfully."
 
@@ -142,7 +142,7 @@ if command_exists asdf && [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
   log_success "ASDF plugins added."
   log_info "Installing and setting global Python, Node.js, and Go versions via ASDF..."
 
-  PYTHON_VERSION="latest:3.11"
+  PYTHON_VERSION="latest:3.13.3"
   NODEJS_VERSION="lts"
   GOLANG_VERSION="latest"
 
