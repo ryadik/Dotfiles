@@ -3,35 +3,19 @@
     "checkpointing": {
       "enabled": true
     },
-    "disableAutoUpdate": true,
-    "preferredEditor": "vscode",
-    "previewFeatures": true
+    "preferredEditor": "neovim",
+    "previewFeatures": true,
+    "enableAutoUpdate": false,
+    "enablePromptCompletion": false,
+    "defaultApprovalMode": "default",
+    "sessionRetention": {
+      "warningAcknowledged": true,
+      "enabled": true,
+      "maxAge": "120d"
+    }
   },
   "ui": {
     "customThemes": {
-      "custom-google-theme": {
-        "name": "MyCustomTheme",
-        "type": "custom",
-        "Background": "#181818",
-        "Foreground": "#F8F8F2",
-        "LightBlue": "#82AAFF",
-        "AccentBlue": "#61AFEF",
-        "AccentPurple": "#C678DD",
-        "AccentCyan": "#56B6C2",
-        "AccentGreen": "#98C379",
-        "AccentYellow": "#E5C07B",
-        "AccentRed": "#E06C75",
-        "Comment": "#5C6370",
-        "Gray": "#ABB2BF",
-        "DiffAdded": "#A6E3A1",
-        "DiffRemoved": "#F38BA8",
-        "DiffModified": "#89B4FA",
-        "GradientColors": [
-          "#4796E4",
-          "#847ACE",
-          "#C3677F"
-        ]
-      },
       "tokyonight": {
         "name": "tokyonight",
         "type": "custom",
@@ -57,15 +41,26 @@
     "hideBanner": true,
     "footer": {
       "hideSandboxStatus": true,
-      "hideContextPercentage": false
+      "hideContextPercentage": false,
+      "items": [
+        "workspace",
+        "git-branch",
+        "code-changes",
+        "context-used",
+        "token-count",
+        "quota",
+        "model-name",
+        "memory-usage"
+      ]
     },
     "showMemoryUsage": true,
     "showLineNumbers": false,
     "theme": "tokyonight",
-    "showStatusInTitle": true,
+    "showStatusInTitle": false,
     "accessibility": {
       "screenReader": false
-    }
+    },
+    "showModelInfoInChat": true
   },
   "advanced": {
     "excludedEnvVars": [
@@ -110,9 +105,15 @@
   "security": {
     "auth": {
       "selectedType": "oauth-personal"
-    }
+    },
+    "enablePermanentToolApproval": true,
+    "disableYoloMode": true
   },
   "output": {
     "format": "text"
-  }
+  },
+  "experimental": {
+    "plan": true
+  },
+  "tools": {}
 }
