@@ -1,0 +1,39 @@
+#!/usr/bin/env zsh
+
+# Extract and search aliases from .zshrc
+ZSHRC="${ZDOTDIR:-$HOME}/.zshrc"
+DOTFILES_ZSHRC="$HOME/.dotfiles/zsh/.zshrc"
+
+# Source file to read aliases from
+SOURCE_FILE="$ZSHRC"
+[[ -f "$DOTFILES_ZSHRC" ]] && SOURCE_FILE="$DOTFILES_ZSHRC"
+
+if [[ ! -f "$SOURCE_FILE" ]]; then
+  echo "Error: .zshrc not found" >&2
+  exit 1
+fi
+
+# Extract aliases: "alias name=value" or "alias name='value'"
+extract_aliases() {
+  grep -E '^alias ' "$SOURCE_FILE" | sed 's/^alias //' | sort
+}
+
+# If no arguments or --help, show all aliases
+if [[ $# -eq 0 ]] || [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
+  extract_aliases | fzf \
+    --height 100% \
+    --layout=default \
+    --border=rounded \
+    --marker='✓' \
+    --pointer='►' \
+    --color='fg:#c0caf5,bg:#1a1b26,hl:#bb9af7,fg+:#c0caf5,bg+:#292e42,hl+:#bb9af7,info:#7dcfff,prompt:#7dcfff,pointer:#7dcfff,marker:#bb9af7,preview-bg:#1f2335,border:#7dcfff' \
+    --preview 'echo {} | cut -d"=" -f1' \
+    --preview-window='right,30%,border-rounded' \
+    --header "Search aliases. ENTER: Copy to clipboard | CTRL-C: Exit" \
+    --bind "ctrl-c:abort" \
+    --bind "enter:execute(echo {} | cut -d'=' -f1 | tr -d ' ' | pbcopy)+abort"
+  exit 0
+fi
+
+# If arguments provided, grep for them
+extract_aliases | grep -i --color=always "$*"

@@ -148,6 +148,9 @@ alias dfs="stow --restow --target=$HOME git kitty lazygit neovim ruby tmux zsh"
 alias python="python3"
 alias pip="pip3"
 
+# --- Utility Aliases ---
+alias zsh-aliases='~/.dotfiles/zsh/zsh-aliases'
+
 # --- Zsh Vars ---
 COMPLETION_WAITING_DOTS="true"
 DEFAULT_USER="ryadik"
