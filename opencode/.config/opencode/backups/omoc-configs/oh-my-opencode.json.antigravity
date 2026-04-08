@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "google/antigravity-claude-opus-4-6-thinking",
+      "temperature": 0.3
+    },
+    "OpenCode-Builder": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.2
+    },
+    "oracle": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.2
+    },
+    "librarian": {
+      "model": "google/gemini-3.1-pro-preview",
+      "temperature": 0.4
+    },
+    "explore": {
+      "model": "google/gemini-3-flash-preview",
+      "temperature": 0.1
+    },
+    "multimodal-looker": {
+      "model": "google/gemini-3.1-pro-preview",
+      "temperature": 0.5
+    },
+    "prometheus": {
+      "model": "google/antigravity-claude-opus-4-6-thinking",
+      "temperature": 0.2
+    },
+    "metis": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.2
+    },
+    "momus": {
+      "model": "google/antigravity-claude-opus-4-6-thinking",
+      "temperature": 0.1
+    },
+    "atlas": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.3
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "google/gemini-3.1-pro-preview",
+      "temperature": 0.7,
+      "prompt_append": "Focus on UI/UX and frontend development with attention to design principles and user experience."
+    },
+    "ultrabrain": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.3,
+      "prompt_append": "Apply advanced logical reasoning and solve complex algorithmic challenges."
+    },
+    "deep": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.2,
+      "prompt_append": "Approach problems with thorough analysis and systematic methodology."
+    },
+    "artistry": {
+      "model": "google/gemini-3.1-pro-preview",
+      "temperature": 0.8,
+      "prompt_append": "Think creatively and unconventionally, providing innovative solutions beyond standard patterns."
+    },
+    "quick": {
+      "model": "google/gemini-3-flash-preview",
+      "temperature": 0.1,
+      "prompt_append": "Handle simple, straightforward tasks quickly and efficiently."
+    },
+    "unspecified-low": {
+      "model": "google/gemini-3-flash-preview",
+      "temperature": 0.1,
+      "prompt_append": "Process low-complexity tasks with efficiency and speed."
+    },
+    "unspecified-high": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.4,
+      "prompt_append": "Address complex, high-effort tasks requiring detailed attention."
+    },
+    "writing": {
+      "model": "google/antigravity-claude-sonnet-4-6",
+      "temperature": 0.6,
+      "prompt_append": "Produce high-quality documentation, technical writing, and clear explanations."
+    }
+  },
+  "background_task": {
+    "defaultConcurrency": 5,
+    "providerConcurrency": {
+      "google": 5,
+      "openai": 5,
+      "qwen": 10
+    },
+    "modelConcurrency": {
+      "google/antigravity-claude-opus-4-6-thinking": 2,
+      "google/antigravity-claude-sonnet-4-6": 3,
+      "google/gemini-3.1-pro-preview": 5,
+      "google/gemini-3-flash-preview": 8
+    }
+  },
+  "experimental": {
+    "aggressive_truncation": true
+  },
+  "git_master": {
+    "commit_footer": true,
+    "include_co_authored_by": true
+  }
+}

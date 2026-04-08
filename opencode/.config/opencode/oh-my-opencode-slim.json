@@ -1,0 +1,112 @@
+{
+  "tmux": {
+    "enabled": true,
+    "layout": "main-horizontal",
+    "main_pane_size": 80
+  },
+  "preset": "dynamic",
+  "presets": {
+    "dynamic": {
+      "oracle": {
+        "model": "chutes/moonshotai/Kimi-K2.5-TEE",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "orchestrator": {
+        "model": "chutes/moonshotai/Kimi-K2.5-TEE",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "websearch"
+        ]
+      },
+      "fixer": {
+        "model": "chutes/zai-org/GLM-4.7-FP8",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "chutes/moonshotai/Kimi-K2.5-TEE",
+        "variant": "medium",
+        "skills": [
+          "agent-browser"
+        ],
+        "mcps": [
+          "figma-mcp"
+        ]
+      },
+      "librarian": {
+        "model": "chutes/zai-org/GLM-4.7-FP8",
+        "variant": "low",
+        "skills": [],
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app"
+        ]
+      },
+      "explorer": {
+        "model": "chutes/zai-org/GLM-4.7-FP8",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  },
+  "balanceProviderUsage": true,
+  "fallback": {
+    "enabled": true,
+    "timeoutMs": 15000,
+    "chains": {
+      "oracle": [
+        "chutes/moonshotai/Kimi-K2.5-TEE",
+        "chutes/Qwen/Qwen3.5-397B-A17B-TEE",
+        "chutes/MiniMaxAI/MiniMax-M2.1-TEE",
+        "opencode/gpt-5.4",
+        "google/gemini-3.1-pro-preview",
+        "opencode/gpt-5-nano"
+      ],
+      "orchestrator": [
+        "chutes/moonshotai/Kimi-K2.5-TEE",
+        "chutes/Qwen/Qwen3.5-397B-A17B-TEE",
+        "chutes/MiniMaxAI/MiniMax-M2.1-TEE",
+        "opencode/gpt-5.4",
+        "google/gemini-3.1-pro-preview",
+        "opencode/gpt-5-nano"
+      ],
+      "fixer": [
+        "chutes/zai-org/GLM-4.7-FP8",
+        "chutes/MiniMaxAI/MiniMax-M2.1-TEE",
+        "chutes/moonshotai/Kimi-K2.5-TEE",
+        "opencode/gemini-3.1-pro",
+        "opencode/gpt-5.4",
+        "opencode/minimax-m2.5-free"
+      ],
+      "designer": [
+        "chutes/moonshotai/Kimi-K2.5-TEE",
+        "chutes/Qwen/Qwen3.5-397B-A17B-TEE",
+        "chutes/MiniMaxAI/MiniMax-M2.1-TEE",
+        "opencode/gpt-5.4",
+        "google/gemini-3.1-pro-preview",
+        "opencode/gpt-5-nano"
+      ],
+      "librarian": [
+        "chutes/zai-org/GLM-4.7-FP8",
+        "chutes/moonshotai/Kimi-K2.5-TEE",
+        "chutes/MiniMaxAI/MiniMax-M2.1-TEE",
+        "opencode/gpt-5.4",
+        "opencode/minimax-m2.5-free"
+      ],
+      "explorer": [
+        "chutes/zai-org/GLM-4.7-FP8",
+        "chutes/MiniMaxAI/MiniMax-M2.1-TEE",
+        "chutes/moonshotai/Kimi-K2.5-TEE",
+        "google/gemini-3.1-pro-preview",
+        "opencode/minimax-m2.5-free"
+      ]
+    }
+  }
+}

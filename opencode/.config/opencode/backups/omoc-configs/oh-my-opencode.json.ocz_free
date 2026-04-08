@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "opencode/glm-5-free",
+      "temperature": 0.3
+    },
+    "OpenCode-Builder": {
+      "model": "opencode/big-pickle",
+      "temperature": 0.2
+    },
+    "oracle": {
+      "model": "opencode/glm-5-free",
+      "temperature": 0.2
+    },
+    "librarian": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.4
+    },
+    "explore": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1
+    },
+    "multimodal-looker": {
+      "model": "opencode/trinity-large-preview-free",
+      "temperature": 0.5
+    },
+    "prometheus": {
+      "model": "opencode/glm-5-free",
+      "temperature": 0.2
+    },
+    "metis": {
+      "model": "opencode/big-pickle",
+      "temperature": 0.2
+    },
+    "momus": {
+      "model": "opencode/glm-5-free",
+      "temperature": 0.1
+    },
+    "atlas": {
+      "model": "opencode/big-pickle",
+      "temperature": 0.3
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "opencode/trinity-large-preview-free",
+      "temperature": 0.7,
+      "prompt_append": "Focus on UI/UX and frontend development with attention to design principles and user experience."
+    },
+    "ultrabrain": {
+      "model": "opencode/glm-5-free",
+      "temperature": 0.3,
+      "prompt_append": "Apply advanced logical reasoning and solve complex algorithmic challenges."
+    },
+    "deep": {
+      "model": "opencode/glm-5-free",
+      "temperature": 0.2,
+      "prompt_append": "Approach problems with thorough analysis and systematic methodology."
+    },
+    "artistry": {
+      "model": "opencode/trinity-large-preview-free",
+      "temperature": 0.8,
+      "prompt_append": "Think creatively and unconventionally, providing innovative solutions beyond standard patterns."
+    },
+    "quick": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1,
+      "prompt_append": "Handle simple, straightforward tasks quickly and efficiently."
+    },
+    "unspecified-low": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1,
+      "prompt_append": "Process low-complexity tasks with efficiency and speed."
+    },
+    "unspecified-high": {
+      "model": "opencode/big-pickle",
+      "temperature": 0.4,
+      "prompt_append": "Address complex, high-effort tasks requiring detailed attention."
+    },
+    "writing": {
+      "model": "opencode/big-pickle",
+      "temperature": 0.6,
+      "prompt_append": "Produce high-quality documentation, technical writing, and clear explanations."
+    }
+  },
+  "background_task": {
+    "defaultConcurrency": 5,
+    "providerConcurrency": {
+      "opencode": 10
+    },
+    "modelConcurrency": {
+      "opencode/glm-5-free": 3,
+      "opencode/big-pickle": 5,
+      "opencode/minimax-m2.5-free": 8,
+      "opencode/trinity-large-preview-free": 5
+    }
+  },
+  "experimental": {
+    "aggressive_truncation": true
+  },
+  "git_master": {
+    "commit_footer": true,
+    "include_co_authored_by": true
+  }
+}
