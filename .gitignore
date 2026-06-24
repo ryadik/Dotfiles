@@ -12,3 +12,4 @@ vscode/.vscode/argv.json
 neovim/.config/nvim/
 
 .env
+opencode/.config/opencode/package-lock.json
