@@ -6,7 +6,6 @@ TMUX_SCRIPT="$DOTFILES_DIR/tmux/tmux_ws.sh"
 ZSH_ALIASES_SCRIPT="$DOTFILES_DIR/zsh/zsh-aliases"
 STOW_PACKAGES=(
   fish
-  gemini
   ghostty
   git
   glow
