@@ -16,7 +16,9 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 # --- Add GOPATH to PATH ---
-export PATH=$PATH:$(go env GOBIN)
+if [ -d "$HOME/go/bin" ]; then
+  PATH="$PATH:$HOME/go/bin"
+fi
 
 # --- Antigen Plugin Configuration ---
 antigen use oh-my-zsh
@@ -27,8 +29,6 @@ antigen bundles <<EOBUNDLES
   bundler
   rails
   marlonrichert/zsh-autocomplete
-  zsh-completions
-  command-not-found
   zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-autosuggestions
   zsh-users/zsh-completions
@@ -121,13 +121,12 @@ alias lg="lazygit"
 alias clear_modules="rm -rf ./node_modules ; rm ./package-lock.json"
 alias code="code ./'"
 alias ws="webstorm"
-alias gmn="gemini --model gemini-3.1-pro-preview"
-alias gmnf="gemini --model gemini-3-flash-preview"
-alias ask="gemini --model gemini-3-flash-preview -p"
 alias regex="regex-tui"
 alias finder="yazi"
 alias bktr="book-translator"
 alias mntr="btm"
+alias mdv="glow"
+alias cdx="codex"
 
 # --- Brew Aliases ---
 alias hbup="brew update"
@@ -142,7 +141,7 @@ alias nginx_stop="brew services stop nginx"
 # --- Bundle Aliases ---
 alias dfu="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile_new"
 alias dfuc="brew bundle dump --force --file=$HOME/.dotfiles/Brewfile && git -C $HOME/.dotfiles/ add . && git -C $HOME/.dotfiles/ commit -m 'feat(bundle): SYSTEM update Brewfile via brew bundle dump'"
-alias dfs="stow --restow --target=$HOME git kitty lazygit neovim ruby tmux zsh"
+alias dfs="stow --restow --target=$HOME fish ghostty git glow kitty lazygit neovim opencode ruby tmux vscode yazi zsh"
 
 # --- Python Aliases ---
 alias python="python3"
@@ -155,7 +154,7 @@ alias zsh-aliases='~/.dotfiles/zsh/zsh-aliases'
 COMPLETION_WAITING_DOTS="true"
 DEFAULT_USER="ryadik"
 BAT_THEME="Visual Studio Dark+"
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # --- Language Version Managers (Post-Antigen/Core setup) ---
 eval "$(pyenv init -)"
@@ -211,3 +210,7 @@ export PATH="/Users/ryadik/.antigravity/antigravity/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/ryadik/.local/bin:$PATH"
