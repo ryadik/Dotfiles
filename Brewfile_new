@@ -1,0 +1,263 @@
+tap "anistark/tools"
+tap "anomalyco/tap"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
+tap "heroku/brew"
+tap "lbjlaq/antigravity-manager", "https://github.com/lbjlaq/Antigravity-Manager"
+tap "nikitabobko/tap"
+tap "theboredteam/boring-notch", "https://github.com/TheBoredTeam/homebrew-boring-notch"
+tap "thezoraiz/ascii-image-converter"
+tap "thoughtbot/formulae"
+# Plugin manager for zsh, inspired by oh-my-zsh and vundle
+brew "antigen"
+# Distributed revision control system
+brew "git"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Speech synthesizer that supports more than hundred languages and accents
+brew "espeak-ng"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Banner-like program prints strings as ASCII art
+brew "figlet"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Disk usage analyzer with console interface written in Go
+brew "gdu"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Render markdown on the CLI
+brew "glow"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
+# Popular GNU data compression program
+brew "gzip"
+# YAML Parser
+brew "libyaml"
+# Client library for huggingface.co hub
+brew "hf"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Key-value storage library with ordered mapping
+brew "leveldb"
+# Rainbows and unicorns in your console!
+brew "lolcat"
+# Mac App Store command-line interface
+brew "mas"
+# Lightweight PDF and XPS viewer
+brew "mupdf-tools"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx"
+# Create, run, and share large language models (LLMs)
+brew "ollama", restart_service: :changed
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Python version management
+brew "pyenv"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI-powered command-line workflow tool for developers
+brew "qwen-code"
+# Reattach process (e.g., tmux) to background
+brew "reattach-to-user-namespace"
+# SVG rendering tool and library
+brew "resvg"
+# CLI proxy to minimize LLM token consumption
+brew "rtk"
+# Numeric file selection shortcuts for common git commands
+brew "scmpuff"
+# Rich git commit graph in your terminal
+brew "serie"
+# Non-interactive SSH password auth
+brew "sshpass"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Very fast implementation of tldr in Rust
+brew "tealdeer"
+# User interface to the TELNET protocol
+brew "telnet"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Extraction utility for .zip compressed archives
+brew "unzip"
+# Internet file retriever
+brew "wget"
+# Access X11 clipboards from the command-line
+brew "xclip"
+# JavaScript package manager
+brew "yarn"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# UNIX shell (command interpreter)
+brew "zsh"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace"
+# VPN client
+cask "amneziavpn"
+# Memory training application
+cask "anki"
+# Agent orchestration platform
+cask "antigravity"
+# Terminal interface for Antigravity agents
+cask "antigravity-cli"
+# Professional Account Management for AI Services
+cask "lbjlaq/antigravity-manager/antigravity-tools"
+# Application uninstaller
+cask "appcleaner"
+# Display management tool
+cask "betterdisplay"
+# Not so boring notch That Rocks 🎸🎶 
+cask "theboredteam/boring-notch/boring-notch"
+# E-books management software
+cask "calibre"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Cut and paste files in Finder
+cask "command-x"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Collaborative team software
+cask "figma"
+# Web browser
+cask "firefox"
+cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
+cask "google-chrome"
+# HTTP and GraphQL Client
+cask "insomnia"
+# Menu bar manager
+cask "jordanbaird-ice"
+# Keyboard customiser
+cask "karabiner-elements"
+# GPU-based terminal emulator
+cask "kitty"
+# Customise mouse behavior
+cask "linearmouse"
+# Open-source software for live streaming and screen recording
+cask "obs"
+# Android file transfer
+cask "openmtp"
+# Collaboration platform for API development
+cask "postman"
+# Peer to peer Bitorrent client
+cask "qbittorrent"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Music streaming service
+cask "spotify"
+# System monitor for the menu bar
+cask "stats"
+# Video game digital distribution service
+cask "steam"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
+# Rust-based terminal
+cask "warp"
+# JavaScript IDE
+cask "webstorm"
+# Web browser
+cask "yandex"
+# Multiplayer code editor
+cask "zed"
+mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Unzip - RAR ZIP 7Z Unarchiver", id: 1537056818
+mas "v2RayTun", id: 6476628951
+mas "Windows App", id: 1295203466
+mas "WireGuard", id: 1451685025
+mas "WPS Office", id: 1468073139
+vscode "aaron-bond.better-comments"
+vscode "alefragnani.project-manager"
+vscode "alexcvzz.vscode-sqlite"
+vscode "angular.ng-template"
+vscode "anthropic.claude-code"
+vscode "be5invis.vscode-custom-css"
+vscode "chadalen.vscode-jetbrains-icon-theme"
+vscode "christian-kohler.path-intellisense"
+vscode "dbaeumer.vscode-eslint"
+vscode "eenaree.webstorm-new-dark"
+vscode "enkia.tokyo-night"
+vscode "esbenp.prettier-vscode"
+vscode "formulahendry.auto-close-tag"
+vscode "formulahendry.auto-rename-tag"
+vscode "github.copilot-chat"
+vscode "google.gemini-cli-vscode-ide-companion"
+vscode "gruntfuggly.todo-tree"
+vscode "k--kato.intellij-idea-keybindings"
+vscode "leizongmin.node-module-intellisense"
+vscode "miguelsolorio.fluent-icons"
+vscode "mikestead.dotenv"
+vscode "mrmlnc.vscode-scss"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-ceintl.vscode-language-pack-ru"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "openai.chatgpt"
+vscode "ritwickdey.liveserver"
+vscode "rokoroku.vscode-theme-darcula"
+vscode "shd101wyy.markdown-preview-enhanced"
+vscode "vue.volar"
+vscode "zignd.html-css-class-completion"
+npm "agent-browser"
+npm "commiter"
+npm "corepack"
+npm "npm-check-updates"
+npm "pyright"
+npm "typescript-language-server"
+npm "typescript"
